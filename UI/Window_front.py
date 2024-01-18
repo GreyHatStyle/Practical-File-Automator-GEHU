@@ -1,25 +1,41 @@
-from PyQt6.QtWidgets import QMainWindow, QApplication
-from PyQt6.QtWidgets import QLabel, QPushButton, QStackedWidget
-from PyQt6 import uic
+from .MainUI import *
 import sys
 
-class UI(QMainWindow):
-    def __init__(self):
-        super(UI, self).__init__()
-
-        #load the UI file
-        uic.loadUi("Main.ui", self)
-
-        #Show the app
-        self.show()
+# def main_exe():
+#     app = QtWidgets.QApplication(sys.argv)
+#     MainWindow = QtWidgets.QMainWindow()
+#     ui = Ui_MainWindow()
+#     ui.setupUi(MainWindow)
 
 
-# Initialize the app
-def main_exe():
-    app = QApplication(sys.argv)
-    window = UI()
-    app.exec()
 
+#     # to show UI
+#     ui.pg1_next.clicked.connect(lambda: ui.stackedWidget.setCurrentWidget(ui.page_2))
+
+#     MainWindow.show()
+#     sys.exit(app.exec())
+
+
+# if __name__ == "__main__":
+#     main_exe()
+
+
+class GUI_Front:
+    def __init__(self) -> None:
+        app = QtWidgets.QApplication(sys.argv)
+        MainWindow = QtWidgets.QMainWindow()
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(MainWindow)
+        self.setter()
+        MainWindow.show()
+        app.exec()
+        
+
+    def setter(self):
+        self.ui.pg1_next.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_2))
+        
+
+    
 
 if __name__ == "__main__":
-    main_exe()
+    GUI_Front()

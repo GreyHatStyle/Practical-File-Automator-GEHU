@@ -90,6 +90,27 @@
        <string>Page 2</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="pg2_next">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>480</y>
+        <width>151</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Tahoma</family>
+        <pointsize>16</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Next</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_3">
      <widget class="QLabel" name="label">
@@ -112,6 +133,27 @@
        <string>Page 3</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="pg3_next">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>490</y>
+        <width>151</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Tahoma</family>
+        <pointsize>16</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Next</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_4">
      <widget class="QLabel" name="label_3">
@@ -132,6 +174,27 @@
       </property>
       <property name="text">
        <string>Page 4</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pg4_next">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>480</y>
+        <width>151</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Tahoma</family>
+        <pointsize>16</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Next</string>
       </property>
      </widget>
     </widget>

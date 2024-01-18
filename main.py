@@ -1,4 +1,6 @@
-import UI.Window_front
+from UI import GUI_Front
 
 if __name__ == "__main__":
-    UI.Window_front.main_exe()
+    GUI_Front()
+
+    
