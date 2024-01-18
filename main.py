@@ -1,4 +1,4 @@
-import UI.test
+import UI.Window_front
 
 if __name__ == "__main__":
-    UI.test.main_exe()
+    UI.Window_front.main_exe()
