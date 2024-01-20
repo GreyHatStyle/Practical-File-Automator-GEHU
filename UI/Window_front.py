@@ -32,9 +32,16 @@ class GUI_Front:
         
 
     def setter(self):
+
+        # Next Commands
         self.ui.pg1_next.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_2))
         self.ui.pg2_next.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_3))
         self.ui.pg3_next.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_4))
+
+        # Back Commands
+        self.ui.pg2_back.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_1))
+        self.ui.pg3_back.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_2))
+        self.ui.pg4_back.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_3))
         
         
 

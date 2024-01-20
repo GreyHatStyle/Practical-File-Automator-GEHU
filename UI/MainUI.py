@@ -12,95 +12,575 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(780, 610)
+        MainWindow.resize(1118, 729)
+        MainWindow.setMinimumSize(QtCore.QSize(1118, 729))
+        MainWindow.setMaximumSize(QtCore.QSize(1118, 729))
+        MainWindow.setStyleSheet("background-color: rgb(18, 18, 18);")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.stackedWidget = QtWidgets.QStackedWidget(parent=self.centralwidget)
-        self.stackedWidget.setGeometry(QtCore.QRect(0, 0, 781, 581))
+        self.stackedWidget.setGeometry(QtCore.QRect(0, 0, 1111, 751))
+        self.stackedWidget.setWhatsThis("")
+        self.stackedWidget.setStyleSheet("background-color: rgb(18, 18, 18);\n"
+"")
         self.stackedWidget.setObjectName("stackedWidget")
         self.page_1 = QtWidgets.QWidget()
         self.page_1.setObjectName("page_1")
-        self.label_1 = QtWidgets.QLabel(parent=self.page_1)
-        self.label_1.setGeometry(QtCore.QRect(310, 10, 151, 61))
+        self.pg1_next = QtWidgets.QPushButton(parent=self.page_1)
+        self.pg1_next.setGeometry(QtCore.QRect(470, 630, 181, 61))
+        font = QtGui.QFont()
+        font.setFamily("Tahoma")
+        font.setPointSize(16)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pg1_next.setFont(font)
+        self.pg1_next.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.pg1_next.setMouseTracking(False)
+        self.pg1_next.setStyleSheet(" QPushButton {\n"
+"    background-color: rgb(12, 44, 255);\n"
+"    border: 2px solid black;\n"
+"    border-radius: 20px;\n"
+"    color: rgb(255, 255, 255);\n"
+"}\n"
+"QPushButton:hover {\n"
+"      \n"
+"    background-color: rgb(0, 2, 147);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    \n"
+"    background-color: rgb(75, 192, 255);\n"
+"}")
+        self.pg1_next.setObjectName("pg1_next")
+        self.label_5 = QtWidgets.QLabel(parent=self.page_1)
+        self.label_5.setGeometry(QtCore.QRect(470, 10, 151, 61))
         font = QtGui.QFont()
         font.setPointSize(26)
         font.setBold(True)
         font.setWeight(75)
-        self.label_1.setFont(font)
-        self.label_1.setObjectName("label_1")
-        self.pg1_next = QtWidgets.QPushButton(parent=self.page_1)
-        self.pg1_next.setGeometry(QtCore.QRect(290, 480, 151, 51))
-        font = QtGui.QFont()
-        font.setFamily("Tahoma")
-        font.setPointSize(16)
-        font.setBold(False)
-        font.setWeight(50)
-        self.pg1_next.setFont(font)
-        self.pg1_next.setObjectName("pg1_next")
+        self.label_5.setFont(font)
+        self.label_5.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_5.setObjectName("label_5")
         self.stackedWidget.addWidget(self.page_1)
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
         self.label_2 = QtWidgets.QLabel(parent=self.page_2)
-        self.label_2.setGeometry(QtCore.QRect(310, 10, 151, 61))
+        self.label_2.setGeometry(QtCore.QRect(400, 10, 321, 61))
         font = QtGui.QFont()
         font.setPointSize(26)
         font.setBold(True)
         font.setWeight(75)
         self.label_2.setFont(font)
+        self.label_2.setStyleSheet("color: rgb(255, 255, 255);")
         self.label_2.setObjectName("label_2")
         self.pg2_next = QtWidgets.QPushButton(parent=self.page_2)
-        self.pg2_next.setGeometry(QtCore.QRect(310, 480, 151, 51))
+        self.pg2_next.setGeometry(QtCore.QRect(800, 630, 181, 61))
         font = QtGui.QFont()
         font.setFamily("Tahoma")
         font.setPointSize(16)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pg2_next.setFont(font)
+        self.pg2_next.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.pg2_next.setStyleSheet(" QPushButton {\n"
+"    background-color: rgb(12, 44, 255);\n"
+"    border: 2px solid black;\n"
+"    border-radius: 20px;\n"
+"    color: rgb(255, 255, 255);\n"
+"}\n"
+"QPushButton:hover {\n"
+"      \n"
+"    background-color: rgb(0, 2, 147);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    \n"
+"    background-color: rgb(75, 192, 255);\n"
+"}")
+        self.pg2_next.setObjectName("pg2_next")
+        self.pg2_back = QtWidgets.QPushButton(parent=self.page_2)
+        self.pg2_back.setGeometry(QtCore.QRect(200, 630, 181, 61))
+        font = QtGui.QFont()
+        font.setFamily("Tahoma")
+        font.setPointSize(16)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pg2_back.setFont(font)
+        self.pg2_back.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.pg2_back.setStyleSheet(" QPushButton {\n"
+"    background-color: rgb(12, 44, 255);\n"
+"    border: 2px solid black;\n"
+"    border-radius: 20px;\n"
+"    color: rgb(255, 255, 255);\n"
+"}\n"
+"QPushButton:hover {\n"
+"      \n"
+"    background-color: rgb(0, 2, 147);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    \n"
+"    background-color: rgb(75, 192, 255);\n"
+"}")
+        self.pg2_back.setObjectName("pg2_back")
+        self.pg2_ModeFrame = QtWidgets.QFrame(parent=self.page_2)
+        self.pg2_ModeFrame.setGeometry(QtCore.QRect(30, 260, 221, 201))
+        self.pg2_ModeFrame.setStyleSheet("\n"
+"\n"
+"QFrame{\n"
+"    background-color: rgb(31, 31, 31);\n"
+"    border-radius: 10px;\n"
+"}")
+        self.pg2_ModeFrame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.pg2_ModeFrame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.pg2_ModeFrame.setObjectName("pg2_ModeFrame")
+        self.label_9 = QtWidgets.QLabel(parent=self.pg2_ModeFrame)
+        self.label_9.setGeometry(QtCore.QRect(10, 0, 91, 51))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_9.setFont(font)
+        self.label_9.setStyleSheet("color: rgb(234, 234, 234);")
+        self.label_9.setObjectName("label_9")
+        self.pg2_javaRb = QtWidgets.QRadioButton(parent=self.pg2_ModeFrame)
+        self.pg2_javaRb.setGeometry(QtCore.QRect(10, 70, 121, 21))
+        font = QtGui.QFont()
+        font.setPointSize(14)
         font.setBold(False)
         font.setWeight(50)
-        self.pg2_next.setFont(font)
-        self.pg2_next.setObjectName("pg2_next")
+        self.pg2_javaRb.setFont(font)
+        self.pg2_javaRb.setStyleSheet("QRadioButton{\n"
+"    color: rgb(234, 234, 234);\n"
+"    \n"
+"    background-color: rgb(31, 31, 31);\n"
+"}")
+        self.pg2_javaRb.setObjectName("pg2_javaRb")
+        self.pg2_cppRb = QtWidgets.QRadioButton(parent=self.pg2_ModeFrame)
+        self.pg2_cppRb.setGeometry(QtCore.QRect(10, 100, 121, 21))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setWeight(50)
+        self.pg2_cppRb.setFont(font)
+        self.pg2_cppRb.setStyleSheet("QRadioButton{\n"
+"    color: rgb(234, 234, 234);\n"
+"    \n"
+"    background-color: rgb(31, 31, 31);\n"
+"}")
+        self.pg2_cppRb.setObjectName("pg2_cppRb")
+        self.pg2_cRb = QtWidgets.QRadioButton(parent=self.pg2_ModeFrame)
+        self.pg2_cRb.setGeometry(QtCore.QRect(10, 130, 121, 21))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setWeight(50)
+        self.pg2_cRb.setFont(font)
+        self.pg2_cRb.setStyleSheet("QRadioButton{\n"
+"    color: rgb(234, 234, 234);\n"
+"    \n"
+"    background-color: rgb(31, 31, 31);\n"
+"}")
+        self.pg2_cRb.setObjectName("pg2_cRb")
+        self.pg2_cRb_2 = QtWidgets.QRadioButton(parent=self.pg2_ModeFrame)
+        self.pg2_cRb_2.setGeometry(QtCore.QRect(10, 160, 121, 21))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setWeight(50)
+        self.pg2_cRb_2.setFont(font)
+        self.pg2_cRb_2.setStyleSheet("QRadioButton{\n"
+"    color: rgb(234, 234, 234);\n"
+"    \n"
+"    background-color: rgb(31, 31, 31);\n"
+"}")
+        self.pg2_cRb_2.setObjectName("pg2_cRb_2")
+        self.pg2_HeadingsFrame = QtWidgets.QFrame(parent=self.page_2)
+        self.pg2_HeadingsFrame.setGeometry(QtCore.QRect(300, 260, 771, 201))
+        self.pg2_HeadingsFrame.setStyleSheet("\n"
+"\n"
+"QFrame{\n"
+"    background-color: rgb(31, 31, 31);\n"
+"    border-radius: 10px;\n"
+"}")
+        self.pg2_HeadingsFrame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.pg2_HeadingsFrame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.pg2_HeadingsFrame.setObjectName("pg2_HeadingsFrame")
+        self.label_12 = QtWidgets.QLabel(parent=self.pg2_HeadingsFrame)
+        self.label_12.setGeometry(QtCore.QRect(10, 0, 161, 51))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_12.setFont(font)
+        self.label_12.setStyleSheet("color: rgb(234, 234, 234);")
+        self.label_12.setObjectName("label_12")
+        self.label_13 = QtWidgets.QLabel(parent=self.pg2_HeadingsFrame)
+        self.label_13.setGeometry(QtCore.QRect(15, 50, 141, 51))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_13.setFont(font)
+        self.label_13.setStyleSheet("color: rgb(234, 234, 234);")
+        self.label_13.setObjectName("label_13")
+        self.pg2_befcodeBox = QtWidgets.QLineEdit(parent=self.pg2_HeadingsFrame)
+        self.pg2_befcodeBox.setGeometry(QtCore.QRect(155, 60, 191, 31))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.pg2_befcodeBox.setFont(font)
+        self.pg2_befcodeBox.setStyleSheet("QLineEdit{\n"
+"\n"
+"    color: rgb(234, 234, 234);\n"
+"    background-color: rgb(52, 52, 52);\n"
+"    border: 2pxs solid rgb(11, 11, 11);\n"
+"    border-radius: 12px;\n"
+"}")
+        self.pg2_befcodeBox.setObjectName("pg2_befcodeBox")
+        self.label_14 = QtWidgets.QLabel(parent=self.pg2_HeadingsFrame)
+        self.label_14.setGeometry(QtCore.QRect(395, 50, 151, 51))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_14.setFont(font)
+        self.label_14.setStyleSheet("color: rgb(234, 234, 234);")
+        self.label_14.setObjectName("label_14")
+        self.pg2_befoutBox = QtWidgets.QLineEdit(parent=self.pg2_HeadingsFrame)
+        self.pg2_befoutBox.setGeometry(QtCore.QRect(550, 60, 191, 31))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.pg2_befoutBox.setFont(font)
+        self.pg2_befoutBox.setStyleSheet("QLineEdit{\n"
+"\n"
+"    color: rgb(234, 234, 234);\n"
+"    background-color: rgb(52, 52, 52);\n"
+"    border: 2pxs solid rgb(11, 11, 11);\n"
+"    border-radius: 12px;\n"
+"}")
+        self.pg2_befoutBox.setObjectName("pg2_befoutBox")
+        self.label_15 = QtWidgets.QLabel(parent=self.pg2_HeadingsFrame)
+        self.label_15.setGeometry(QtCore.QRect(15, 105, 111, 21))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_15.setFont(font)
+        self.label_15.setStyleSheet("color: rgb(234, 234, 234);")
+        self.label_15.setObjectName("label_15")
+        self.pg2_befCodeFont = QtWidgets.QLineEdit(parent=self.pg2_HeadingsFrame)
+        self.pg2_befCodeFont.setGeometry(QtCore.QRect(155, 100, 101, 31))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.pg2_befCodeFont.setFont(font)
+        self.pg2_befCodeFont.setStyleSheet("QLineEdit{\n"
+"\n"
+"    color: rgb(234, 234, 234);\n"
+"    background-color: rgb(52, 52, 52);\n"
+"    border: 2pxs solid rgb(11, 11, 11);\n"
+"    border-radius: 12px;\n"
+"}")
+        self.pg2_befCodeFont.setObjectName("pg2_befCodeFont")
+        self.pg2_BfBold = QtWidgets.QCheckBox(parent=self.pg2_HeadingsFrame)
+        self.pg2_BfBold.setGeometry(QtCore.QRect(160, 150, 81, 20))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.pg2_BfBold.setFont(font)
+        self.pg2_BfBold.setStyleSheet("QCheckBox{\n"
+"    color: rgb(234, 234, 234);\n"
+"    \n"
+"    background-color: rgb(31, 31, 31);\n"
+"}")
+        self.pg2_BfBold.setObjectName("pg2_BfBold")
+        self.pg2_BoBold = QtWidgets.QCheckBox(parent=self.pg2_HeadingsFrame)
+        self.pg2_BoBold.setGeometry(QtCore.QRect(555, 150, 81, 20))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.pg2_BoBold.setFont(font)
+        self.pg2_BoBold.setStyleSheet("QCheckBox{\n"
+"    color: rgb(234, 234, 234);\n"
+"    \n"
+"    background-color: rgb(31, 31, 31);\n"
+"}")
+        self.pg2_BoBold.setObjectName("pg2_BoBold")
+        self.label_16 = QtWidgets.QLabel(parent=self.pg2_HeadingsFrame)
+        self.label_16.setGeometry(QtCore.QRect(395, 105, 111, 21))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_16.setFont(font)
+        self.label_16.setStyleSheet("color: rgb(234, 234, 234);")
+        self.label_16.setObjectName("label_16")
+        self.pg2_befoutFont = QtWidgets.QLineEdit(parent=self.pg2_HeadingsFrame)
+        self.pg2_befoutFont.setGeometry(QtCore.QRect(550, 100, 101, 31))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.pg2_befoutFont.setFont(font)
+        self.pg2_befoutFont.setStyleSheet("QLineEdit{\n"
+"\n"
+"    color: rgb(234, 234, 234);\n"
+"    background-color: rgb(52, 52, 52);\n"
+"    border: 2pxs solid rgb(11, 11, 11);\n"
+"    border-radius: 12px;\n"
+"}")
+        self.pg2_befoutFont.setObjectName("pg2_befoutFont")
+        self.pg2_OverallFrame = QtWidgets.QFrame(parent=self.page_2)
+        self.pg2_OverallFrame.setGeometry(QtCore.QRect(30, 480, 1041, 141))
+        self.pg2_OverallFrame.setStyleSheet("\n"
+"\n"
+"QFrame{\n"
+"    background-color: rgb(31, 31, 31);\n"
+"    border-radius: 10px;\n"
+"}")
+        self.pg2_OverallFrame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.pg2_OverallFrame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.pg2_OverallFrame.setObjectName("pg2_OverallFrame")
+        self.label_22 = QtWidgets.QLabel(parent=self.pg2_OverallFrame)
+        self.label_22.setGeometry(QtCore.QRect(10, 0, 211, 51))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_22.setFont(font)
+        self.label_22.setStyleSheet("color: rgb(234, 234, 234);")
+        self.label_22.setObjectName("label_22")
+        self.label_23 = QtWidgets.QLabel(parent=self.pg2_OverallFrame)
+        self.label_23.setGeometry(QtCore.QRect(10, 40, 141, 51))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_23.setFont(font)
+        self.label_23.setStyleSheet("color: rgb(234, 234, 234);")
+        self.label_23.setObjectName("label_23")
+        self.pg2_befcodeBox_3 = QtWidgets.QLineEdit(parent=self.pg2_OverallFrame)
+        self.pg2_befcodeBox_3.setGeometry(QtCore.QRect(150, 50, 281, 31))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.pg2_befcodeBox_3.setFont(font)
+        self.pg2_befcodeBox_3.setStyleSheet("QLineEdit{\n"
+"\n"
+"    color: rgb(234, 234, 234);\n"
+"    background-color: rgb(52, 52, 52);\n"
+"    border: 2pxs solid rgb(11, 11, 11);\n"
+"    border-radius: 12px;\n"
+"}")
+        self.pg2_befcodeBox_3.setObjectName("pg2_befcodeBox_3")
+        self.label_25 = QtWidgets.QLabel(parent=self.pg2_OverallFrame)
+        self.label_25.setGeometry(QtCore.QRect(10, 95, 111, 21))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_25.setFont(font)
+        self.label_25.setStyleSheet("color: rgb(234, 234, 234);")
+        self.label_25.setObjectName("label_25")
+        self.pg2_befCodeFont_3 = QtWidgets.QLineEdit(parent=self.pg2_OverallFrame)
+        self.pg2_befCodeFont_3.setGeometry(QtCore.QRect(150, 90, 101, 31))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.pg2_befCodeFont_3.setFont(font)
+        self.pg2_befCodeFont_3.setStyleSheet("QLineEdit{\n"
+"\n"
+"    color: rgb(234, 234, 234);\n"
+"    background-color: rgb(52, 52, 52);\n"
+"    border: 2pxs solid rgb(11, 11, 11);\n"
+"    border-radius: 12px;\n"
+"}")
+        self.pg2_befCodeFont_3.setObjectName("pg2_befCodeFont_3")
+        self.label_24 = QtWidgets.QLabel(parent=self.pg2_OverallFrame)
+        self.label_24.setGeometry(QtCore.QRect(450, 40, 311, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_24.setFont(font)
+        self.label_24.setStyleSheet("color: rgb(234, 234, 234);")
+        self.label_24.setObjectName("label_24")
+        self.pg2_OverallFrame_2 = QtWidgets.QFrame(parent=self.page_2)
+        self.pg2_OverallFrame_2.setGeometry(QtCore.QRect(30, 80, 1041, 161))
+        self.pg2_OverallFrame_2.setStyleSheet("\n"
+"\n"
+"QFrame{\n"
+"    background-color: rgb(31, 31, 31);\n"
+"    border-radius: 10px;\n"
+"}")
+        self.pg2_OverallFrame_2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.pg2_OverallFrame_2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.pg2_OverallFrame_2.setObjectName("pg2_OverallFrame_2")
+        self.label_8 = QtWidgets.QLabel(parent=self.pg2_OverallFrame_2)
+        self.label_8.setGeometry(QtCore.QRect(20, 80, 151, 61))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_8.setFont(font)
+        self.label_8.setStyleSheet("color: rgb(229, 229, 229);")
+        self.label_8.setObjectName("label_8")
+        self.label_4 = QtWidgets.QLabel(parent=self.pg2_OverallFrame_2)
+        self.label_4.setGeometry(QtCore.QRect(20, 20, 151, 61))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_4.setFont(font)
+        self.label_4.setStyleSheet("color: rgb(234, 234, 234);")
+        self.label_4.setObjectName("label_4")
+        self.pg2_footer_box = QtWidgets.QLineEdit(parent=self.pg2_OverallFrame_2)
+        self.pg2_footer_box.setGeometry(QtCore.QRect(150, 90, 871, 51))
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.pg2_footer_box.setFont(font)
+        self.pg2_footer_box.setStyleSheet("QLineEdit{\n"
+"\n"
+"    color: rgb(234, 234, 234);\n"
+"    background-color: rgb(52, 52, 52);\n"
+"    border: 2pxs solid rgb(11, 11, 11);\n"
+"    border-radius: 12px;\n"
+"}")
+        self.pg2_footer_box.setObjectName("pg2_footer_box")
+        self.pg2_header_box = QtWidgets.QLineEdit(parent=self.pg2_OverallFrame_2)
+        self.pg2_header_box.setGeometry(QtCore.QRect(150, 30, 871, 51))
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.pg2_header_box.setFont(font)
+        self.pg2_header_box.setStyleSheet("QLineEdit{\n"
+"\n"
+"    color: rgb(234, 234, 234);\n"
+"    background-color: rgb(52, 52, 52);\n"
+"    border: 2pxs solid rgb(11, 11, 11);\n"
+"    border-radius: 12px;\n"
+"}")
+        self.pg2_header_box.setObjectName("pg2_header_box")
         self.stackedWidget.addWidget(self.page_2)
         self.page_3 = QtWidgets.QWidget()
         self.page_3.setObjectName("page_3")
-        self.label = QtWidgets.QLabel(parent=self.page_3)
-        self.label.setGeometry(QtCore.QRect(300, 10, 151, 61))
+        self.pg3_next = QtWidgets.QPushButton(parent=self.page_3)
+        self.pg3_next.setGeometry(QtCore.QRect(800, 630, 181, 61))
+        font = QtGui.QFont()
+        font.setFamily("Tahoma")
+        font.setPointSize(16)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pg3_next.setFont(font)
+        self.pg3_next.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.pg3_next.setStyleSheet(" QPushButton {\n"
+"    background-color: rgb(12, 44, 255);\n"
+"    border: 2px solid black;\n"
+"    border-radius: 20px;\n"
+"    color: rgb(255, 255, 255);\n"
+"}\n"
+"QPushButton:hover {\n"
+"      \n"
+"    background-color: rgb(0, 2, 147);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    \n"
+"    background-color: rgb(75, 192, 255);\n"
+"}")
+        self.pg3_next.setObjectName("pg3_next")
+        self.label_6 = QtWidgets.QLabel(parent=self.page_3)
+        self.label_6.setGeometry(QtCore.QRect(450, 20, 151, 61))
         font = QtGui.QFont()
         font.setPointSize(26)
         font.setBold(True)
         font.setWeight(75)
-        self.label.setFont(font)
-        self.label.setObjectName("label")
-        self.pg3_next = QtWidgets.QPushButton(parent=self.page_3)
-        self.pg3_next.setGeometry(QtCore.QRect(310, 490, 151, 51))
+        self.label_6.setFont(font)
+        self.label_6.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_6.setObjectName("label_6")
+        self.pg3_back = QtWidgets.QPushButton(parent=self.page_3)
+        self.pg3_back.setGeometry(QtCore.QRect(200, 630, 181, 61))
         font = QtGui.QFont()
         font.setFamily("Tahoma")
         font.setPointSize(16)
-        font.setBold(False)
-        font.setWeight(50)
-        self.pg3_next.setFont(font)
-        self.pg3_next.setObjectName("pg3_next")
+        font.setBold(True)
+        font.setWeight(75)
+        self.pg3_back.setFont(font)
+        self.pg3_back.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.pg3_back.setStyleSheet(" QPushButton {\n"
+"    background-color: rgb(12, 44, 255);\n"
+"    border: 2px solid black;\n"
+"    border-radius: 20px;\n"
+"    color: rgb(255, 255, 255);\n"
+"}\n"
+"QPushButton:hover {\n"
+"      \n"
+"    background-color: rgb(0, 2, 147);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    \n"
+"    background-color: rgb(75, 192, 255);\n"
+"}")
+        self.pg3_back.setObjectName("pg3_back")
         self.stackedWidget.addWidget(self.page_3)
         self.page_4 = QtWidgets.QWidget()
         self.page_4.setObjectName("page_4")
-        self.label_3 = QtWidgets.QLabel(parent=self.page_4)
-        self.label_3.setGeometry(QtCore.QRect(330, 10, 151, 61))
+        self.pg4_back = QtWidgets.QPushButton(parent=self.page_4)
+        self.pg4_back.setGeometry(QtCore.QRect(200, 630, 181, 61))
+        font = QtGui.QFont()
+        font.setFamily("Tahoma")
+        font.setPointSize(16)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pg4_back.setFont(font)
+        self.pg4_back.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.pg4_back.setStyleSheet(" QPushButton {\n"
+"    background-color: rgb(12, 44, 255);\n"
+"    border: 2px solid black;\n"
+"    border-radius: 20px;\n"
+"    color: rgb(255, 255, 255);\n"
+"}\n"
+"QPushButton:hover {\n"
+"      \n"
+"    background-color: rgb(0, 2, 147);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    \n"
+"    background-color: rgb(75, 192, 255);\n"
+"}")
+        self.pg4_back.setObjectName("pg4_back")
+        self.pg4_submit = QtWidgets.QPushButton(parent=self.page_4)
+        self.pg4_submit.setGeometry(QtCore.QRect(800, 630, 181, 61))
+        font = QtGui.QFont()
+        font.setFamily("Tahoma")
+        font.setPointSize(16)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pg4_submit.setFont(font)
+        self.pg4_submit.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.pg4_submit.setStyleSheet(" QPushButton {\n"
+"    background-color: rgb(12, 44, 255);\n"
+"    border: 2px solid black;\n"
+"    border-radius: 20px;\n"
+"    color: rgb(255, 255, 255);\n"
+"}\n"
+"QPushButton:hover {\n"
+"      \n"
+"    background-color: rgb(0, 2, 147);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    \n"
+"    background-color: rgb(75, 192, 255);\n"
+"}")
+        self.pg4_submit.setObjectName("pg4_submit")
+        self.label_7 = QtWidgets.QLabel(parent=self.page_4)
+        self.label_7.setGeometry(QtCore.QRect(470, 10, 151, 61))
         font = QtGui.QFont()
         font.setPointSize(26)
         font.setBold(True)
         font.setWeight(75)
-        self.label_3.setFont(font)
-        self.label_3.setObjectName("label_3")
-        self.pg4_next = QtWidgets.QPushButton(parent=self.page_4)
-        self.pg4_next.setGeometry(QtCore.QRect(320, 480, 151, 51))
-        font = QtGui.QFont()
-        font.setFamily("Tahoma")
-        font.setPointSize(16)
-        font.setBold(False)
-        font.setWeight(50)
-        self.pg4_next.setFont(font)
-        self.pg4_next.setObjectName("pg4_next")
+        self.label_7.setFont(font)
+        self.label_7.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_7.setObjectName("label_7")
         self.stackedWidget.addWidget(self.page_4)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 780, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1118, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
@@ -108,20 +588,42 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label_1.setText(_translate("MainWindow", "Page 1"))
+        self.pg1_next.setWhatsThis(_translate("MainWindow", "This is jhoncena"))
         self.pg1_next.setText(_translate("MainWindow", "Next"))
-        self.label_2.setText(_translate("MainWindow", "Page 2"))
+        self.label_5.setText(_translate("MainWindow", "Page 1"))
+        self.label_2.setText(_translate("MainWindow", "Settings Page"))
         self.pg2_next.setText(_translate("MainWindow", "Next"))
-        self.label.setText(_translate("MainWindow", "Page 3"))
+        self.pg2_back.setText(_translate("MainWindow", "Back"))
+        self.label_9.setText(_translate("MainWindow", "Mode"))
+        self.pg2_javaRb.setText(_translate("MainWindow", "Java"))
+        self.pg2_cppRb.setText(_translate("MainWindow", "C++"))
+        self.pg2_cRb.setText(_translate("MainWindow", "C"))
+        self.pg2_cRb_2.setText(_translate("MainWindow", "Python"))
+        self.label_12.setText(_translate("MainWindow", "Headings"))
+        self.label_13.setText(_translate("MainWindow", "Before Code"))
+        self.label_14.setText(_translate("MainWindow", "Before Ouput"))
+        self.label_15.setText(_translate("MainWindow", "Font Size"))
+        self.pg2_BfBold.setText(_translate("MainWindow", "Bold"))
+        self.pg2_BoBold.setText(_translate("MainWindow", "Bold"))
+        self.label_16.setText(_translate("MainWindow", "Font Size"))
+        self.label_22.setText(_translate("MainWindow", "Overall Font"))
+        self.label_23.setText(_translate("MainWindow", "Font"))
+        self.label_25.setText(_translate("MainWindow", "Font Size"))
+        self.label_24.setText(_translate("MainWindow", "Recommended: Times New Roman"))
+        self.label_8.setText(_translate("MainWindow", "Footer"))
+        self.label_4.setText(_translate("MainWindow", "Header"))
         self.pg3_next.setText(_translate("MainWindow", "Next"))
-        self.label_3.setText(_translate("MainWindow", "Page 4"))
-        self.pg4_next.setText(_translate("MainWindow", "Next"))
+        self.label_6.setText(_translate("MainWindow", "Page 3"))
+        self.pg3_back.setText(_translate("MainWindow", "Back"))
+        self.pg4_back.setText(_translate("MainWindow", "Back"))
+        self.pg4_submit.setText(_translate("MainWindow", "Submit"))
+        self.label_7.setText(_translate("MainWindow", "Page 4"))
 
 
 if __name__ == "__main__":
