@@ -19,7 +19,7 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.stackedWidget = QtWidgets.QStackedWidget(parent=self.centralwidget)
-        self.stackedWidget.setGeometry(QtCore.QRect(0, 0, 1111, 751))
+        self.stackedWidget.setGeometry(QtCore.QRect(0, -10, 1111, 751))
         self.stackedWidget.setWhatsThis("")
         self.stackedWidget.setStyleSheet("background-color: rgb(18, 18, 18);\n"
 "")
@@ -482,7 +482,7 @@ class Ui_MainWindow(object):
 "}")
         self.pg3_next.setObjectName("pg3_next")
         self.label_6 = QtWidgets.QLabel(parent=self.page_3)
-        self.label_6.setGeometry(QtCore.QRect(450, 20, 151, 61))
+        self.label_6.setGeometry(QtCore.QRect(400, 10, 341, 61))
         font = QtGui.QFont()
         font.setPointSize(26)
         font.setBold(True)
@@ -515,6 +515,202 @@ class Ui_MainWindow(object):
 "    background-color: rgb(75, 192, 255);\n"
 "}")
         self.pg3_back.setObjectName("pg3_back")
+        self.pg3_OverallFrame = QtWidgets.QFrame(parent=self.page_3)
+        self.pg3_OverallFrame.setGeometry(QtCore.QRect(30, 80, 1041, 111))
+        self.pg3_OverallFrame.setStyleSheet("\n"
+"\n"
+"QFrame{\n"
+"    background-color: rgb(31, 31, 31);\n"
+"    border-radius: 10px;\n"
+"}")
+        self.pg3_OverallFrame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.pg3_OverallFrame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.pg3_OverallFrame.setObjectName("pg3_OverallFrame")
+        self.label_11 = QtWidgets.QLabel(parent=self.pg3_OverallFrame)
+        self.label_11.setGeometry(QtCore.QRect(20, 20, 151, 61))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_11.setFont(font)
+        self.label_11.setStyleSheet("color: rgb(234, 234, 234);")
+        self.label_11.setObjectName("label_11")
+        self.textEdit = QtWidgets.QTextEdit(parent=self.pg3_OverallFrame)
+        self.textEdit.setGeometry(QtCore.QRect(190, 16, 821, 81))
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.textEdit.setFont(font)
+        self.textEdit.setStyleSheet("QTextEdit{\n"
+"\n"
+"    color: rgb(234, 234, 234);\n"
+"    background-color: rgb(52, 52, 52);\n"
+"    border: 2pxs solid rgb(11, 11, 11);\n"
+"    border-radius: 12px;\n"
+"}")
+        self.textEdit.setObjectName("textEdit")
+        self.pg3_InputFrame = QtWidgets.QFrame(parent=self.page_3)
+        self.pg3_InputFrame.setGeometry(QtCore.QRect(30, 210, 501, 341))
+        self.pg3_InputFrame.setStyleSheet("\n"
+"\n"
+"QFrame{\n"
+"    background-color: rgb(31, 31, 31);\n"
+"    border-radius: 10px;\n"
+"}")
+        self.pg3_InputFrame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.pg3_InputFrame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.pg3_InputFrame.setObjectName("pg3_InputFrame")
+        self.label_17 = QtWidgets.QLabel(parent=self.pg3_InputFrame)
+        self.label_17.setGeometry(QtCore.QRect(20, 10, 151, 61))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_17.setFont(font)
+        self.label_17.setStyleSheet("color: rgb(234, 234, 234);")
+        self.label_17.setObjectName("label_17")
+        self.textEdit_2 = QtWidgets.QTextEdit(parent=self.pg3_InputFrame)
+        self.textEdit_2.setGeometry(QtCore.QRect(20, 80, 461, 241))
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.textEdit_2.setFont(font)
+        self.textEdit_2.setStyleSheet("QTextEdit{\n"
+"\n"
+"    color: rgb(234, 234, 234);\n"
+"    background-color: rgb(52, 52, 52);\n"
+"    border: 2pxs solid rgb(11, 11, 11);\n"
+"    border-radius: 12px;\n"
+"}")
+        self.textEdit_2.setObjectName("textEdit_2")
+        self.pg3_InputSettingFrame = QtWidgets.QFrame(parent=self.page_3)
+        self.pg3_InputSettingFrame.setGeometry(QtCore.QRect(570, 210, 501, 341))
+        self.pg3_InputSettingFrame.setStyleSheet("\n"
+"\n"
+"QFrame{\n"
+"    background-color: rgb(31, 31, 31);\n"
+"    border-radius: 10px;\n"
+"}")
+        self.pg3_InputSettingFrame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.pg3_InputSettingFrame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.pg3_InputSettingFrame.setObjectName("pg3_InputSettingFrame")
+        self.label_18 = QtWidgets.QLabel(parent=self.pg3_InputSettingFrame)
+        self.label_18.setGeometry(QtCore.QRect(10, 20, 261, 51))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_18.setFont(font)
+        self.label_18.setStyleSheet("color: rgb(234, 234, 234);")
+        self.label_18.setObjectName("label_18")
+        self.label_19 = QtWidgets.QLabel(parent=self.pg3_InputSettingFrame)
+        self.label_19.setGeometry(QtCore.QRect(20, 80, 231, 51))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_19.setFont(font)
+        self.label_19.setStyleSheet("color: rgb(234, 234, 234);")
+        self.label_19.setObjectName("label_19")
+        self.pg3_IpFrequency = QtWidgets.QLineEdit(parent=self.pg3_InputSettingFrame)
+        self.pg3_IpFrequency.setGeometry(QtCore.QRect(170, 90, 101, 31))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.pg3_IpFrequency.setFont(font)
+        self.pg3_IpFrequency.setStyleSheet("QLineEdit{\n"
+"\n"
+"    color: rgb(234, 234, 234);\n"
+"    background-color: rgb(52, 52, 52);\n"
+"    border: 2pxs solid rgb(11, 11, 11);\n"
+"    border-radius: 12px;\n"
+"}")
+        self.pg3_IpFrequency.setObjectName("pg3_IpFrequency")
+        self.label_21 = QtWidgets.QLabel(parent=self.pg3_InputSettingFrame)
+        self.label_21.setGeometry(QtCore.QRect(20, 150, 111, 21))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_21.setFont(font)
+        self.label_21.setStyleSheet("color: rgb(234, 234, 234);")
+        self.label_21.setObjectName("label_21")
+        self.pg3_fontsizInp = QtWidgets.QLineEdit(parent=self.pg3_InputSettingFrame)
+        self.pg3_fontsizInp.setGeometry(QtCore.QRect(170, 150, 101, 31))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.pg3_fontsizInp.setFont(font)
+        self.pg3_fontsizInp.setStyleSheet("QLineEdit{\n"
+"\n"
+"    color: rgb(234, 234, 234);\n"
+"    background-color: rgb(52, 52, 52);\n"
+"    border: 2pxs solid rgb(11, 11, 11);\n"
+"    border-radius: 12px;\n"
+"}")
+        self.pg3_fontsizInp.setObjectName("pg3_fontsizInp")
+        self.pg3_boldIp = QtWidgets.QCheckBox(parent=self.pg3_InputSettingFrame)
+        self.pg3_boldIp.setGeometry(QtCore.QRect(180, 200, 81, 20))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.pg3_boldIp.setFont(font)
+        self.pg3_boldIp.setStyleSheet("QCheckBox{\n"
+"    color: rgb(234, 234, 234);\n"
+"    \n"
+"    background-color: rgb(31, 31, 31);\n"
+"}")
+        self.pg3_boldIp.setObjectName("pg3_boldIp")
+        self.label_26 = QtWidgets.QLabel(parent=self.pg3_InputSettingFrame)
+        self.label_26.setGeometry(QtCore.QRect(280, 80, 161, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_26.setFont(font)
+        self.label_26.setStyleSheet("color: rgb(234, 234, 234);")
+        self.label_26.setObjectName("label_26")
+        self.label_27 = QtWidgets.QLabel(parent=self.pg3_InputSettingFrame)
+        self.label_27.setGeometry(QtCore.QRect(280, 140, 191, 21))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_27.setFont(font)
+        self.label_27.setStyleSheet("color: rgb(234, 234, 234);")
+        self.label_27.setObjectName("label_27")
+        self.label_28 = QtWidgets.QLabel(parent=self.pg3_InputSettingFrame)
+        self.label_28.setGeometry(QtCore.QRect(280, 160, 191, 20))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_28.setFont(font)
+        self.label_28.setStyleSheet("color: rgb(234, 234, 234);")
+        self.label_28.setObjectName("label_28")
+        self.pg3_GoButton = QtWidgets.QPushButton(parent=self.pg3_InputSettingFrame)
+        self.pg3_GoButton.setGeometry(QtCore.QRect(40, 260, 111, 61))
+        font = QtGui.QFont()
+        font.setFamily("Tahoma")
+        font.setPointSize(16)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pg3_GoButton.setFont(font)
+        self.pg3_GoButton.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.pg3_GoButton.setStyleSheet(" QPushButton {\n"
+"    \n"
+"    background-color: rgb(30, 203, 27);\n"
+"    border: 2px  rgb(31, 31, 31);\n"
+"    border-radius: 20px;\n"
+"    color: rgb(255, 255, 255);\n"
+"}\n"
+"QPushButton:hover {\n"
+"      \n"
+"    \n"
+"    background-color: rgb(10, 186, 1);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    \n"
+"    \n"
+"    background-color: rgb(0, 255, 128);\n"
+"}")
+        self.pg3_GoButton.setObjectName("pg3_GoButton")
         self.stackedWidget.addWidget(self.page_3)
         self.page_4 = QtWidgets.QWidget()
         self.page_4.setObjectName("page_4")
@@ -588,7 +784,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -619,8 +815,18 @@ class Ui_MainWindow(object):
         self.label_8.setText(_translate("MainWindow", "Footer"))
         self.label_4.setText(_translate("MainWindow", "Header"))
         self.pg3_next.setText(_translate("MainWindow", "Next"))
-        self.label_6.setText(_translate("MainWindow", "Page 3"))
+        self.label_6.setText(_translate("MainWindow", "Input Set Page"))
         self.pg3_back.setText(_translate("MainWindow", "Back"))
+        self.label_11.setText(_translate("MainWindow", "Question"))
+        self.label_17.setText(_translate("MainWindow", "Input"))
+        self.label_18.setText(_translate("MainWindow", "Input Settings"))
+        self.label_19.setText(_translate("MainWindow", "Frequency (TestCases)"))
+        self.label_21.setText(_translate("MainWindow", "Font Size"))
+        self.pg3_boldIp.setText(_translate("MainWindow", "Bold"))
+        self.label_26.setText(_translate("MainWindow", "Recommended: 3"))
+        self.label_27.setText(_translate("MainWindow", "If left empty: (Overall Font) Setting"))
+        self.label_28.setText(_translate("MainWindow", "will be used.(prev page)"))
+        self.pg3_GoButton.setText(_translate("MainWindow", "Go"))
         self.pg4_back.setText(_translate("MainWindow", "Back"))
         self.pg4_submit.setText(_translate("MainWindow", "Submit"))
         self.label_7.setText(_translate("MainWindow", "Page 4"))
