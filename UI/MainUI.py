@@ -1131,7 +1131,7 @@ class Ui_MainWindow(object):
         self.pg3_NextQusButton.setText(_translate("MainWindow", "Next Question"))
         self.pg4_back.setText(_translate("MainWindow", "Back"))
         self.pg4_quit.setText(_translate("MainWindow", "Quit"))
-        self.label_7.setText(_translate("MainWindow", "If any issue happened during execution kindly report to me via github or linkedin. "))
+        self.label_7.setText(_translate("MainWindow", "If you face any issue during execution, kindly report to me via github or linkedin. "))
         self.label_10.setText(_translate("MainWindow", "Thanks For Using My Project"))
 
 
