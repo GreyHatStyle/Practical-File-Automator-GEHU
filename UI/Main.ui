@@ -49,34 +49,407 @@
      <number>0</number>
     </property>
     <widget class="QWidget" name="page_1">
-     <widget class="QPushButton" name="pg1_next">
+     <widget class="QFrame" name="pg1_InfoForm">
       <property name="geometry">
        <rect>
-        <x>470</x>
-        <y>630</y>
-        <width>181</width>
-        <height>61</height>
+        <x>20</x>
+        <y>220</y>
+        <width>401</width>
+        <height>451</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <family>Tahoma</family>
-        <pointsize>16</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
+      <property name="styleSheet">
+       <string notr="true">
+
+QFrame{
+	background-color: rgb(31, 31, 31);
+	border-radius: 10px;
+}</string>
       </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
       </property>
-      <property name="mouseTracking">
-       <bool>false</bool>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
       </property>
-      <property name="whatsThis">
-       <string>This is jhoncena</string>
+      <widget class="QLabel" name="label_20">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>0</y>
+         <width>201</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(234, 234, 234);</string>
+       </property>
+       <property name="text">
+        <string>Information</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_29">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>50</y>
+         <width>141</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(234, 234, 234);</string>
+       </property>
+       <property name="text">
+        <string>Name</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="pg1_NameInp">
+       <property name="geometry">
+        <rect>
+         <x>155</x>
+         <y>60</y>
+         <width>191</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+
+	color: rgb(234, 234, 234);
+	background-color: rgb(52, 52, 52);
+	border: 2pxs solid rgb(11, 11, 11);
+	border-radius: 12px;
+}</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_31">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>105</y>
+         <width>111</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(234, 234, 234);</string>
+       </property>
+       <property name="text">
+        <string>Roll no.</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="pg1_RollNoInp">
+       <property name="geometry">
+        <rect>
+         <x>155</x>
+         <y>100</y>
+         <width>191</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+
+	color: rgb(234, 234, 234);
+	background-color: rgb(52, 52, 52);
+	border: 2pxs solid rgb(11, 11, 11);
+	border-radius: 12px;
+}</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="pg1_inforBoldCB">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>230</y>
+         <width>81</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QCheckBox{
+	color: rgb(234, 234, 234);
+	
+	background-color: rgb(31, 31, 31);
+}</string>
+       </property>
+       <property name="text">
+        <string>Bold</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_33">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>145</y>
+         <width>111</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(234, 234, 234);</string>
+       </property>
+       <property name="text">
+        <string>Section</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_34">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>180</y>
+         <width>111</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(234, 234, 234);</string>
+       </property>
+       <property name="text">
+        <string>Course</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="pg1_SectionInp">
+       <property name="geometry">
+        <rect>
+         <x>155</x>
+         <y>140</y>
+         <width>191</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+
+	color: rgb(234, 234, 234);
+	background-color: rgb(52, 52, 52);
+	border: 2pxs solid rgb(11, 11, 11);
+	border-radius: 12px;
+}</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="pg1_CourseInp">
+       <property name="geometry">
+        <rect>
+         <x>155</x>
+         <y>180</y>
+         <width>191</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+
+	color: rgb(234, 234, 234);
+	background-color: rgb(52, 52, 52);
+	border: 2pxs solid rgb(11, 11, 11);
+	border-radius: 12px;
+}</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pg1_SaveInfoButton">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>350</y>
+         <width>131</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Tahoma</family>
+         <pointsize>16</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"> QPushButton {
+	
+	background-color: rgb(30, 203, 27);
+	border: 2px  rgb(31, 31, 31);
+	border-radius: 20px;
+	color: rgb(255, 255, 255);
+}
+QPushButton:hover {
+ 	 
+	
+	background-color: rgb(10, 186, 1);
+}
+
+QPushButton:pressed{
+	
+	
+	background-color: rgb(0, 255, 128);
+}</string>
+       </property>
+       <property name="text">
+        <string>Save</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_35">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>270</y>
+         <width>401</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(234, 234, 234);</string>
+       </property>
+       <property name="text">
+        <string> This information will be used to insert</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_36">
+       <property name="geometry">
+        <rect>
+         <x>85</x>
+         <y>290</y>
+         <width>381</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(234, 234, 234);</string>
+       </property>
+       <property name="text">
+        <string>these details in your practical file only</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="pg1_NewExisFrame">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>220</y>
+        <width>661</width>
+        <height>451</height>
+       </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true"> QPushButton {
+       <string notr="true">
+
+QFrame{
+	background-color: rgb(31, 31, 31);
+	border-radius: 10px;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="pg1_next_2">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>160</y>
+         <width>301</width>
+         <height>101</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Tahoma</family>
+         <pointsize>22</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <property name="whatsThis">
+        <string>This is jhoncena</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"> QPushButton {
 	background-color: rgb(12, 44, 255);
 	border: 2px solid black;
 	border-radius: 20px;
@@ -91,33 +464,176 @@ QPushButton:pressed{
 	
 	background-color: rgb(75, 192, 255);
 }</string>
-      </property>
-      <property name="text">
-       <string>Next</string>
-      </property>
+       </property>
+       <property name="text">
+        <string>Load File</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pg1_next">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>40</y>
+         <width>301</width>
+         <height>101</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Tahoma</family>
+         <pointsize>22</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <property name="whatsThis">
+        <string>This is jhoncena</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"> QPushButton {
+	background-color: rgb(12, 44, 255);
+	border: 2px solid black;
+	border-radius: 20px;
+	color: rgb(255, 255, 255);
+}
+QPushButton:hover {
+ 	 
+	background-color: rgb(0, 2, 147);
+}
+
+QPushButton:pressed{
+	
+	background-color: rgb(75, 192, 255);
+}</string>
+       </property>
+       <property name="text">
+        <string>New</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pg1_next_3">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>280</y>
+         <width>301</width>
+         <height>101</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Tahoma</family>
+         <pointsize>22</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <property name="whatsThis">
+        <string>This is jhoncena</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"> QPushButton {
+	background-color: rgb(12, 44, 255);
+	border: 2px solid black;
+	border-radius: 20px;
+	color: rgb(255, 255, 255);
+}
+QPushButton:hover {
+ 	 
+	background-color: rgb(0, 2, 147);
+}
+
+QPushButton:pressed{
+	
+	background-color: rgb(75, 192, 255);
+}</string>
+       </property>
+       <property name="text">
+        <string>About</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_37">
+       <property name="geometry">
+        <rect>
+         <x>470</x>
+         <y>190</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(234, 234, 234);</string>
+       </property>
+       <property name="text">
+        <string>*In Progress</string>
+       </property>
+      </widget>
      </widget>
-     <widget class="QLabel" name="label_5">
+     <widget class="QFrame" name="pg2_OverallFrame_3">
       <property name="geometry">
        <rect>
-        <x>470</x>
-        <y>10</y>
-        <width>151</width>
-        <height>61</height>
+        <x>150</x>
+        <y>20</y>
+        <width>801</width>
+        <height>161</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>26</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(255, 255, 255);</string>
+       <string notr="true">
+
+QFrame{
+	background-color: rgb(31, 31, 31);
+	border-radius: 10px;
+}</string>
       </property>
-      <property name="text">
-       <string>Page 1</string>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
       </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>30</y>
+         <width>831</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Times New Roman</family>
+         <pointsize>48</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Practical File Formatter</string>
+       </property>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="page_2">
@@ -950,7 +1466,7 @@ QFrame{
      </widget>
     </widget>
     <widget class="QWidget" name="page_3">
-     <widget class="QPushButton" name="pg3_next">
+     <widget class="QPushButton" name="pg3_createNext">
       <property name="geometry">
        <rect>
         <x>800</x>
@@ -988,7 +1504,7 @@ QPushButton:pressed{
 }</string>
       </property>
       <property name="text">
-       <string>Next</string>
+       <string>Create</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_6">
@@ -1431,12 +1947,12 @@ QFrame{
         <string>will be used.(prev page)</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pg3_GoButton">
+      <widget class="QPushButton" name="pg3_NextQusButton">
        <property name="geometry">
         <rect>
          <x>40</x>
          <y>260</y>
-         <width>111</width>
+         <width>231</width>
          <height>61</height>
         </rect>
        </property>
@@ -1472,7 +1988,7 @@ QPushButton:pressed{
 }</string>
        </property>
        <property name="text">
-        <string>Go</string>
+        <string>Next Question</string>
        </property>
       </widget>
      </widget>
@@ -1519,7 +2035,7 @@ QPushButton:pressed{
        <string>Back</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pg4_submit">
+     <widget class="QPushButton" name="pg4_quit">
       <property name="geometry">
        <rect>
         <x>800</x>
@@ -1557,16 +2073,16 @@ QPushButton:pressed{
 }</string>
       </property>
       <property name="text">
-       <string>Submit</string>
+       <string>Quit</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_7">
       <property name="geometry">
        <rect>
-        <x>470</x>
-        <y>10</y>
-        <width>151</width>
-        <height>61</height>
+        <x>110</x>
+        <y>230</y>
+        <width>911</width>
+        <height>141</height>
        </rect>
       </property>
       <property name="font">
@@ -1580,7 +2096,94 @@ QPushButton:pressed{
        <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>Page 4</string>
+       <string>If any issue happened during execution kindly report to me via github or linkedin. </string>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+      <property name="textInteractionFlags">
+       <set>Qt::TextBrowserInteraction</set>
+      </property>
+     </widget>
+     <widget class="QFrame" name="pg4_ThankFrame">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>10</y>
+        <width>951</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+
+QFrame{
+	background-color: rgb(31, 31, 31);
+	border-radius: 10px;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>30</y>
+         <width>881</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Times New Roman</family>
+         <pointsize>48</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Thanks For Using My Project</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QTextBrowser" name="pg4_TextBrowsr">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>400</y>
+        <width>911</width>
+        <height>192</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>24</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextBrowser{
+
+	color: rgb(234, 234, 234);
+	background-color: rgb(52, 52, 52);
+	border: 2pxs solid rgb(11, 11, 11);
+	border-radius: 12px;
+}</string>
+      </property>
+      <property name="openExternalLinks">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
