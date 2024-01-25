@@ -1,5 +1,7 @@
 from .MainUI import *
 import sys
+from PyQt6.QtWidgets import QFileDialog
+from Utils import Format_Ctrl_Utils
 
 # def main_exe():
 #     app = QtWidgets.QApplication(sys.argv)
@@ -49,7 +51,16 @@ class GUI_Front:
         self.ui.pg4_TextBrowsr.append("<a href='https://github.com/GreyHatStyle'>@ManasBisht (GitHub)</a>")
         self.ui.pg4_TextBrowsr.append("<a href='https://www.linkedin.com/in/manas-bisht-2609a3258/'>@Manas_Bisht (Linkedin)</a>")
         
-
+    # Traversing Folder
+    def folder_traverse(self) -> list:
+        util = Format_Ctrl_Utils()
+        fname = QFileDialog.getExistingDirectory(self, caption='Select Folder that contains C files')
+        c_files = util.get_c_files(fname)
+        return c_files
+    
+    # Sending Data to docx
+    def Next_question_Butn(self):
+        pass
     
 
 if __name__ == "__main__":
