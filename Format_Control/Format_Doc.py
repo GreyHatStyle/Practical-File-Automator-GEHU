@@ -95,5 +95,4 @@ class WriteDocument:
     
     def save_file(self, fileaddress):
         # To save file
-
-        self.Word_Doc.save(fileaddress)
+        self.document.save(fileaddress)
