@@ -1,0 +1,27 @@
+
+
+TEST CASE (1):
+Enter no. of strings: 3
+Enter strings in line by line:
+ Manas is good boy
+ he is okay with life
+ as always
+Your strings are: Manas is good boy 
+he is okay with life 
+as always 
+
+
+TEST CASE (2):
+Enter no. of strings: 2
+Enter strings in line by line:
+ This is good way
+ to check
+Your strings are: This is good way 
+to check 
+
+
+TEST CASE (3):
+Enter no. of strings: 1
+Enter strings in line by line:
+ I am done
+Your strings are: I am done 
