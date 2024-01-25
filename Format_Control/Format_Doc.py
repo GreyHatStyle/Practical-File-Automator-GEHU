@@ -60,7 +60,7 @@ class WordDocument_Handle:
     def set_befOutput(self, fontsize, isbold: bool):
         # Sets Before Ouput Title
         para = self.document.add_paragraph("")
-        setter = para.add_run(self.befIpOp[1]).font
+        setter = para.add_run(f"{self.befIpOp[1]}:").font
         setter.name = self.GenericFont[0]
         setter.size = Pt(int(fontsize))
         setter.bold = isbold
