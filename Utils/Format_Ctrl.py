@@ -1,3 +1,4 @@
+from os import listdir
 class Format_Ctrl_Utils:
     
     def __init__(self):
@@ -17,3 +18,13 @@ BRANCH - CSE
 */
 """
         return format
+    
+    def get_c_files(self, folder_address: str):
+        dir_list = listdir(folder_address)
+        c_files = []
+        for i in dir_list:
+            if i[-2::] == ".c":
+                c_files.append(i)
+        c_files.remove('tempCodeRunnerFile.c')
+        # print("List is : ", c_files)
+        return c_files
