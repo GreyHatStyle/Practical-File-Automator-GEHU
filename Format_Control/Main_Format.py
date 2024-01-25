@@ -1,99 +1,39 @@
 from docx import Document
+from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.shared import Pt
-from Utils import Format_Ctrl_Utils
-from Language_Selection import C_Complier
+from .Format_Doc import WordDocument_Handle
 
-class WriteDocument:
-    def __init__(self, doc: Document, QuesbefIpOpList: list, genericFont: list):
-        # Generic Font indicates [fontname: str, fontsize: int, bold: bool]
+
+class Main_Format_Handle:
+    def __init__(self, doc: Document, BefIpList: list, GenFont: list, headFootList: list):
         self.document = doc
-        self.Utils = Format_Ctrl_Utils()
-        self.QuesbefIpOp = QuesbefIpOpList
-        self.GenericFont = genericFont
-      
 
-
-    def set_headFoot(self, hfList: list):
-        # Adding Header and Footer
-
-        section = self.document.sections[0]
-        header = section.header
-        HeadPara = header.paragraphs[0]
-        HeadPara.text = f"\t{hfList[0]}" # Insert header
-
-
-        section2 = self.document.sections[0]
-        header2 = section.footer
-        HeadPara2 = header2.paragraphs[0]
-        HeadPara2.text = f"\t{hfList[1]}" # Insert Footer
-        self.document.add_page_break()
-
-
-    def set_question(self):
-        # Sets Question First
-        para = self.document.add_paragraph("")
-        setter = para.add_run(self.QuesbefIpOp[0]).font
-        setter.name = self.GenericFont[0]
-        setter.size = Pt(int(self.GenericFont[1]))
-        setter.bold = self.GenericFont[2]
+        self.start = WordDocument_Handle(doc, befIpOpList=BefIpList, genericFont=GenFont)
+        self.bIpOpL = BefIpList
+        self.start.set_headFoot(headFootList)
 
     
-    def set_details(self, DetailsList: list, fontstyle: str, fontsize: int, isbold: bool):
-        para = self.document.add_paragraph("")
-        detail_str = self.Utils.person_details_formatter(detailsList=DetailsList)
-
-        # Font setter
-        setter = para.add_run(detail_str).font
-        setter.name = fontstyle
-        setter.size = Pt(eval(fontsize))
-        setter.bold = isbold
+    def NextQues_PushB_Func(self, detail_list, detail_fsty, detail_fsize, detail_boldd, bef_ip_fsize, bef_ip_bold, file_address, 
+                            bef_op_fsize, bef_op_bold, count, ipString, opc_fSize, opc_bold, question_):
+        
+        # Set Question
+        self.start.set_question(question=question_)
+        # Set Details Below Question
+        self.start.set_details(DetailsList=detail_list, fontstyle=detail_fsty, fontsize=detail_fsize, isbold=detail_boldd)
+        # Code Heading
+        self.start.set_befCode(fontsize=bef_ip_fsize, isbold=bef_ip_bold)
+        # Code Insertion
+        self.start.set_code(address=file_address)
+        # Output Heading
+        self.start.set_befOutput(fontsize=bef_op_fsize, isbold=bef_op_bold)
+        # Output Insertion
+        self.start.set_outputCases(Address=file_address, frequency=count, inputStr=ipString, fontsize=opc_fSize, isbold=opc_bold)
 
     
-    def set_befCode(self, fontsize, isbold: bool):
-        # Sets Before Code Title
-        para = self.document.add_paragraph("")
-        setter = para.add_run(f"//{self.QuesbefIpOp[1]}:").font
-        setter.name = self.GenericFont[0]
-        setter.size = Pt(int(fontsize))
-        setter.bold = isbold
-
-    def set_befOutput(self, fontsize, isbold: bool):
-        # Sets Before Ouput Title
-        para = self.document.add_paragraph("")
-        setter = para.add_run(self.QuesbefIpOp[2]).font
-        setter.name = self.GenericFont[0]
-        setter.size = Pt(int(fontsize))
-        setter.bold = isbold
-
-
-    def set_code(self, address: str):
-        code = ""
-        # Read code from C file
-        with open(address, "r") as ip:
-            code = ip.read()
+    def Save_File_Func(self, file_address):
+        self.start.save_file(fileaddress=file_address)
         
-        # Sets Before Ouput Title
-        para = self.document.add_paragraph("")
-        setter = para.add_run(code).font
-        setter.name = self.GenericFont[0]
-        setter.size = Pt(int(self.GenericFont[1]))
-        setter.bold = self.GenericFont[2]
-        self.document.add_page_break()
-
-
-    def set_outputCases(self, Address, frequency, inputStr, fontsize, isbold: bool) ->str:
-        # Sets output
-        count = int(frequency)
-        output = C_Complier(address=Address, frequency_input=count, input_str=inputStr)
-        
-        para = self.document.add_paragraph("")
-        setter = para.add_run(output).font
-        setter.name = self.GenericFont[0]
-        setter.size = Pt(int(fontsize))
-        setter.bold = self.isbold
         
     
-    def save_file(self, fileaddress):
-        # To save file
+    
 
-        self.Word_Doc.save(fileaddress)
