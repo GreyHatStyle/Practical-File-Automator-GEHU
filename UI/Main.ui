@@ -422,7 +422,7 @@ QFrame{
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QPushButton" name="pg1_next_2">
+      <widget class="QPushButton" name="pg1_loadFile">
        <property name="geometry">
         <rect>
          <x>160</x>
@@ -516,7 +516,7 @@ QPushButton:pressed{
         <string>New</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pg1_next_3">
+      <widget class="QPushButton" name="pg1_about">
        <property name="geometry">
         <rect>
          <x>160</x>

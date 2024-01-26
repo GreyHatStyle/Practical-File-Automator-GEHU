@@ -202,17 +202,17 @@ class Ui_MainWindow(object):
         self.pg1_NewExisFrame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.pg1_NewExisFrame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.pg1_NewExisFrame.setObjectName("pg1_NewExisFrame")
-        self.pg1_next_2 = QtWidgets.QPushButton(parent=self.pg1_NewExisFrame)
-        self.pg1_next_2.setGeometry(QtCore.QRect(160, 160, 301, 101))
+        self.pg1_loadFile = QtWidgets.QPushButton(parent=self.pg1_NewExisFrame)
+        self.pg1_loadFile.setGeometry(QtCore.QRect(160, 160, 301, 101))
         font = QtGui.QFont()
         font.setFamily("Tahoma")
         font.setPointSize(22)
         font.setBold(True)
         font.setWeight(75)
-        self.pg1_next_2.setFont(font)
-        self.pg1_next_2.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.pg1_next_2.setMouseTracking(False)
-        self.pg1_next_2.setStyleSheet(" QPushButton {\n"
+        self.pg1_loadFile.setFont(font)
+        self.pg1_loadFile.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.pg1_loadFile.setMouseTracking(False)
+        self.pg1_loadFile.setStyleSheet(" QPushButton {\n"
 "    background-color: rgb(12, 44, 255);\n"
 "    border: 2px solid black;\n"
 "    border-radius: 20px;\n"
@@ -227,7 +227,7 @@ class Ui_MainWindow(object):
 "    \n"
 "    background-color: rgb(75, 192, 255);\n"
 "}")
-        self.pg1_next_2.setObjectName("pg1_next_2")
+        self.pg1_loadFile.setObjectName("pg1_loadFile")
         self.pg1_next = QtWidgets.QPushButton(parent=self.pg1_NewExisFrame)
         self.pg1_next.setGeometry(QtCore.QRect(160, 40, 301, 101))
         font = QtGui.QFont()
@@ -254,17 +254,17 @@ class Ui_MainWindow(object):
 "    background-color: rgb(75, 192, 255);\n"
 "}")
         self.pg1_next.setObjectName("pg1_next")
-        self.pg1_next_3 = QtWidgets.QPushButton(parent=self.pg1_NewExisFrame)
-        self.pg1_next_3.setGeometry(QtCore.QRect(160, 280, 301, 101))
+        self.pg1_about = QtWidgets.QPushButton(parent=self.pg1_NewExisFrame)
+        self.pg1_about.setGeometry(QtCore.QRect(160, 280, 301, 101))
         font = QtGui.QFont()
         font.setFamily("Tahoma")
         font.setPointSize(22)
         font.setBold(True)
         font.setWeight(75)
-        self.pg1_next_3.setFont(font)
-        self.pg1_next_3.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.pg1_next_3.setMouseTracking(False)
-        self.pg1_next_3.setStyleSheet(" QPushButton {\n"
+        self.pg1_about.setFont(font)
+        self.pg1_about.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.pg1_about.setMouseTracking(False)
+        self.pg1_about.setStyleSheet(" QPushButton {\n"
 "    background-color: rgb(12, 44, 255);\n"
 "    border: 2px solid black;\n"
 "    border-radius: 20px;\n"
@@ -279,7 +279,7 @@ class Ui_MainWindow(object):
 "    \n"
 "    background-color: rgb(75, 192, 255);\n"
 "}")
-        self.pg1_next_3.setObjectName("pg1_next_3")
+        self.pg1_about.setObjectName("pg1_about")
         self.label_37 = QtWidgets.QLabel(parent=self.pg1_NewExisFrame)
         self.label_37.setGeometry(QtCore.QRect(470, 190, 131, 31))
         font = QtGui.QFont()
@@ -1087,12 +1087,12 @@ class Ui_MainWindow(object):
         self.pg1_SaveInfoButton.setText(_translate("MainWindow", "Save"))
         self.label_35.setText(_translate("MainWindow", " This information will be used to insert"))
         self.label_36.setText(_translate("MainWindow", "these details in your practical file only"))
-        self.pg1_next_2.setWhatsThis(_translate("MainWindow", "This is jhoncena"))
-        self.pg1_next_2.setText(_translate("MainWindow", "Load File"))
+        self.pg1_loadFile.setWhatsThis(_translate("MainWindow", "This is jhoncena"))
+        self.pg1_loadFile.setText(_translate("MainWindow", "Load File"))
         self.pg1_next.setWhatsThis(_translate("MainWindow", "This is jhoncena"))
         self.pg1_next.setText(_translate("MainWindow", "New"))
-        self.pg1_next_3.setWhatsThis(_translate("MainWindow", "This is jhoncena"))
-        self.pg1_next_3.setText(_translate("MainWindow", "About"))
+        self.pg1_about.setWhatsThis(_translate("MainWindow", "This is jhoncena"))
+        self.pg1_about.setText(_translate("MainWindow", "About"))
         self.label_37.setText(_translate("MainWindow", "*In Progress"))
         self.label_5.setText(_translate("MainWindow", "Practical File Formatter"))
         self.label_2.setText(_translate("MainWindow", "Settings Page"))
