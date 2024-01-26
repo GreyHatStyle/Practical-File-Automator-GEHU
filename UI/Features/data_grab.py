@@ -80,5 +80,11 @@ has been saved successfully!""")
         genfont[0].setText(data['gen_font'][0])
         genfont[1].setText(data['gen_font'][1])
 
+        
 
+    def save_settingData(self, headFoot :list, befip: list, befop: list, genfont: list):
+        with open(self.settings_path, "w") as op:
+            op.write(f"{headFoot[0]}#{headFoot[1]}\n{befip[0]}#{befip[1]}\n{befop[0]}#{befop[1]}\n{genfont[0]}#{genfont[1]}")
+
+        messagebox.showinfo("Updated!", "Your information is updated for future")
         

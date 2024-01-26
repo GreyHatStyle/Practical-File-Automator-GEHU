@@ -13,8 +13,15 @@ class GUI_Front:
         self.ui = Ui_MainWindow()
         self.ui.setupUi(MainWindow)
 
+
         # Storing Variables
         self.folder_address = ""
+        self.headerfooterList = []  # [header, footer]
+        self.mode = ""              # java, c, cpp, python
+        self.bef_ip_conf = []       # [text, fontsize, bold]
+        self.bef_op_conf = []
+        self.generic_Font = []      # [fontstyle, fontsize]
+
 
         self.setter()
         MainWindow.show()
@@ -32,8 +39,8 @@ class GUI_Front:
         ))
         
         # Next Commands
-        self.ui.pg1_next.clicked.connect(lambda: self.Next_question_Butn())
-        self.ui.pg2_next.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_3))
+        self.ui.pg1_next.clicked.connect(lambda: self.Start_Butn())
+        self.ui.pg2_next.clicked.connect(lambda: self.Setting_next_Butn())
         self.ui.pg3_createNext.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_4))
         self.ui.pg4_quit.clicked.connect(lambda: sys.exit())
         self.ui.pg1_about.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_4))
@@ -73,8 +80,8 @@ class GUI_Front:
         return c_files
     
 
-    # Sending Data to docx
-    def Next_question_Butn(self):
+    # Moving to Setting page
+    def Start_Butn(self):
 
         # If details and save details doesn't match
         check_lst = self.memory_set.data_details
@@ -98,6 +105,69 @@ class GUI_Front:
 
         # Moves to Next Page
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_2)
+
+    def Page2_InputSetting(self):
+        self.headerfooterList = [self.ui.pg2_header_box.text(), self.ui.pg2_footer_box.text()]
+        self.bef_ip_conf = [self.ui.pg2_befcodeBox.text(), self.ui.pg2_befCodeFont.text(), self.ui.pg2_BfBold.isChecked()]
+        self.bef_op_conf = [self.ui.pg2_befoutBox.text(), self.ui.pg2_befoutFont.text(), self.ui.pg2_BoBold.isChecked()]
+        self.generic_Font = [self.ui.pg2_genFontsty.text(), self.ui.pg2_genFontsize.text()]
+
+
+    # Collecting Inputs of "Setting page" and moving forward
+    def Setting_next_Butn(self):
+        self.Page2_InputSetting()
+
+        # Setting mode---
+        if self.ui.pg2_javaRb.isChecked():
+            messagebox.showinfo("Please select differenty option", "For now only 'C' Mode is working...")
+            return
+        elif self.ui.pg2_cppRb.isChecked():
+            messagebox.showinfo("Please select differenty option", "For now only 'C' Mode is working...")
+            return
+        elif self.ui.pg2_cRb.isChecked():
+            self.mode = "c"
+
+        # Edge Cases---
+        if self.ui.pg2_befcodeBox.text() == "" or self.ui.pg2_befoutBox.text() == "":
+            messagebox.showwarning("Please Select and fill all '*' feilds!", "Before Output or Before Code Field not filled.")
+            return
+        elif self.ui.pg2_befCodeFont.text() == "" or self.ui.pg2_befoutFont.text() == "":
+            messagebox.showwarning("Please Select and fill all '*' feilds!", "Before Output Font or Before Code Font Field not filled.")
+            return
+        elif not self.ui.pg2_javaRb.isChecked() and not self.ui.pg2_cppRb.isChecked() and not self.ui.pg2_cRb.isChecked():
+            messagebox.showwarning("Please Select and fill all '*' feilds!", "No 'Mode' Selected!")
+            return
+        elif self.ui.pg2_genFontsize.text() == "" or self.ui.pg2_genFontsty.text() == "":
+            messagebox.showwarning("Please Completed 'Overall font' details!", "Please Select and fill all '*' feilds!")
+            return
+        
+        # Check if details are new or old---
+        dct_data = {'header_footer':self.headerfooterList, 'bef_ip':self.bef_ip_conf[:-1], 
+                    'bef_op':self.bef_op_conf[:-1], 'gen_font':self.generic_Font}
+        sett_data = self.memory_set.data_dct
+
+        if dct_data != sett_data:
+            ans = messagebox.askyesno("Changes Detected in Memory", "Seems like you have changed something...\nDo you want to keep it, for future?")
+            if ans:
+                
+                self.Page2_InputSetting()
+                self.memory_set.data_dct = dct_data
+                print("Before put setting...",self.memory_set.data_dct)
+                self.memory_set.save_settingData(
+                    headFoot = self.headerfooterList,
+                    befip = self.bef_ip_conf[:-1],
+                    befop = self.bef_op_conf[:-1],
+                    genfont = self.generic_Font
+                )
+    
+
+
+        # Go to next page---
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_3)
+
+        
+        
+
 
 
 if __name__ == "__main__":

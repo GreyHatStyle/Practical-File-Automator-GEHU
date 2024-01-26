@@ -770,7 +770,7 @@ QFrame{
         <rect>
          <x>10</x>
          <y>0</y>
-         <width>91</width>
+         <width>121</width>
          <height>51</height>
         </rect>
        </property>
@@ -785,7 +785,7 @@ QFrame{
         <string notr="true">color: rgb(234, 234, 234);</string>
        </property>
        <property name="text">
-        <string>Mode</string>
+        <string>*Mode</string>
        </property>
       </widget>
       <widget class="QRadioButton" name="pg2_javaRb">
@@ -869,33 +869,6 @@ QFrame{
         <string>C</string>
        </property>
       </widget>
-      <widget class="QRadioButton" name="pg2_cRb_2">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>160</y>
-         <width>121</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QRadioButton{
-	color: rgb(234, 234, 234);
-	
-	background-color: rgb(31, 31, 31);
-}</string>
-       </property>
-       <property name="text">
-        <string>Python</string>
-       </property>
-      </widget>
      </widget>
      <widget class="QFrame" name="pg2_HeadingsFrame">
       <property name="geometry">
@@ -963,7 +936,7 @@ QFrame{
         <string notr="true">color: rgb(234, 234, 234);</string>
        </property>
        <property name="text">
-        <string>Before Code</string>
+        <string>*Before Code</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="pg2_befcodeBox">
@@ -1010,7 +983,7 @@ QFrame{
         <string notr="true">color: rgb(234, 234, 234);</string>
        </property>
        <property name="text">
-        <string>Before Ouput</string>
+        <string>*Before Ouput</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="pg2_befoutBox">
@@ -1057,7 +1030,7 @@ QFrame{
         <string notr="true">color: rgb(234, 234, 234);</string>
        </property>
        <property name="text">
-        <string>Font Size</string>
+        <string>*Font Size</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="pg2_befCodeFont">
@@ -1154,7 +1127,7 @@ QFrame{
         <string notr="true">color: rgb(234, 234, 234);</string>
        </property>
        <property name="text">
-        <string>Font Size</string>
+        <string>*Font Size</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="pg2_befoutFont">
@@ -1248,7 +1221,7 @@ QFrame{
         <string notr="true">color: rgb(234, 234, 234);</string>
        </property>
        <property name="text">
-        <string>Font</string>
+        <string>*Font</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="pg2_genFontsty">
@@ -1295,7 +1268,7 @@ QFrame{
         <string notr="true">color: rgb(234, 234, 234);</string>
        </property>
        <property name="text">
-        <string>Font Size</string>
+        <string>*Font Size</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="pg2_genFontsize">
