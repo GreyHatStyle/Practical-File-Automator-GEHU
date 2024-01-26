@@ -42,6 +42,8 @@ class Data_Put_Handle:
             with open(self.details_path, "w") as ip:
                 ip.write(f"{name}#{roll}#{sec}#{course}")
 
+        self.data_details = self.check_details()
+
         
 
 

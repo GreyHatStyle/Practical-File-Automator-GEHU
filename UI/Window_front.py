@@ -81,11 +81,12 @@ class GUI_Front:
                        self.ui.pg1_CourseInp.text()]
             
         if check_lst != current_lst:
+            print("IT ran")
             self.memory_set.save_detailstxt(current_lst[0], current_lst[1], current_lst[2], current_lst[3])
         
         # Get Folder Path (Also avoiding conflicts via changing button text)
-        if self.ui.pg1_next.text() != "Continue":
-            self.folder_address = QFileDialog.getExistingDirectory(caption='Select Folder')
+        if self.ui.pg1_next.text() != "Continue" or check_lst != current_lst:
+            self.folder_address = QFileDialog.getExistingDirectory(caption='Select Folder that contains C Files')
         
 
         if self.folder_address == "":
