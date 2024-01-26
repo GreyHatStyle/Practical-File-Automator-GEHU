@@ -13,23 +13,31 @@ class Data_Put_Handle:
         
         # Strucuring Data from setting.txt
         self.data_dct = self.get_settingData()
+
+        # Getting Data From details.txt
+        self.data_details = self.check_details()
     
     # Function for putting details.txt in GUI
-    def put_details(self, name :QLineEdit, roll :QLineEdit, sec :QLineEdit,
-                    course: QLineEdit):
         
+    def check_details(self)-> list:
         with open(self.details_path, "r") as ip:
             lst = ip.read().split('#')
 
+        return lst
+    
+    def put_details(self, name :QLineEdit, roll :QLineEdit, sec :QLineEdit,
+                    course: QLineEdit):
+        
+        lst = self.data_details
         name.setText(lst[0])
         roll.setText(lst[1])
         sec.setText(lst[2])
         course.setText(lst[3])
-        
+
 
     # Function for updating details.txt in Memory
     def save_detailstxt(self, name: str, roll: str, sec: str, course: str):
-        ans = messagebox.askyesno(message="Do you want to Save Changes?", title="Save Changes?")
+        ans = messagebox.askyesno(message="Do you want to Save Changes?", title="Update Details")
         if ans:
             with open(self.details_path, "w") as ip:
                 ip.write(f"{name}#{roll}#{sec}#{course}")
