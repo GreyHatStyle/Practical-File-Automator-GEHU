@@ -24,7 +24,10 @@ BRANCH - CSE
         c_files = []
         for i in dir_list:
             if i[-2::] == ".c":
-                c_files.append(i)
-        c_files.remove('tempCodeRunnerFile.c')
+                c_files.append(f"{folder_address}\\{i}")
+        try:
+            c_files.remove('tempCodeRunnerFile.c')
+        except:
+            print("")
         # print("List is : ", c_files)
         return c_files
