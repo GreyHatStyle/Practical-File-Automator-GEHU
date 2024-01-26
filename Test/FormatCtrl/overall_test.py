@@ -13,7 +13,7 @@ ques2 = "Write a C program to print sum of 3 integers"
 ques3 = "Write a C program to take input of spaced strings and print it."
             
 genFont = ["Times New Roman", "12", False]
-headFoot = ["Graphic Era HIll University", "E:\Manas Bisht\2219043\Sem III\Section - E1"]
+headFoot = ["Graphic Era HIll University", r"E:\Manas Bisht\2219043\Sem III\Section - E1"]
 
 details = ["Manas Bisht", "38", "E1", "B.Tech"]
 c = 3
