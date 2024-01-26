@@ -1,9 +1,11 @@
 from .MainUI import *
 import sys
 from PyQt6.QtWidgets import QFileDialog
-from Utils import Format_Ctrl_Utils
+from Utils import Format_Ctrl_Utils, Ui_util_Handle
 from .Features import Data_Put_Handle
 from tkinter import messagebox
+from subprocess import run
+
 
 
 class GUI_Front:
@@ -22,6 +24,13 @@ class GUI_Front:
         self.bef_op_conf = []
         self.generic_Font = []      # [fontstyle, fontsize]
 
+        self.dct_data = {}
+        self.sett_data = {}
+        self.current_detail_lst = []
+
+        # Util calls
+        
+        
 
         self.setter()
         MainWindow.show()
@@ -44,8 +53,9 @@ class GUI_Front:
         # Next Commands
         self.ui.pg1_next.clicked.connect(lambda: self.Start_Butn())
         self.ui.pg2_next.clicked.connect(lambda: self.Setting_next_Butn())
-        self.ui.pg3_createNext.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_4))
-        self.ui.pg4_quit.clicked.connect(lambda: sys.exit())
+        self.ui.pg3_NextQusButton.clicked.connect(lambda: self.Next_Ques_Butn())
+        self.ui.pg3_createNext.clicked.connect(lambda: self.Create_func_Butn())
+        self.ui.pg4_quit.clicked.connect(lambda: self.quit())
         self.ui.pg1_about.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_4))
 
         # Back Commands
@@ -78,8 +88,7 @@ class GUI_Front:
     # Traversing Folder
     def folder_traverse(self) -> list:
         util = Format_Ctrl_Utils()
-        fname = QFileDialog.getExistingDirectory(self, caption='Select Folder that contains C files')
-        c_files = util.get_c_files(fname)
+        c_files = util.get_c_files(self.folder_address)
         return c_files
     
 
@@ -88,15 +97,16 @@ class GUI_Front:
 
         # If details and save details doesn't match
         check_lst = self.memory_set.data_details
-        current_lst = [self.ui.pg1_NameInp.text(), self.ui.pg1_RollNoInp.text(), self.ui.pg1_SectionInp.text(), 
+        self.current_detail_lst = [self.ui.pg1_NameInp.text(), self.ui.pg1_RollNoInp.text(), self.ui.pg1_SectionInp.text(), 
                        self.ui.pg1_CourseInp.text()]
             
-        if check_lst != current_lst:
+        if check_lst != self.current_detail_lst:
             print("IT ran")
-            self.memory_set.save_detailstxt(current_lst[0], current_lst[1], current_lst[2], current_lst[3])
+            self.memory_set.save_detailstxt(self.current_detail_lst[0], self.current_detail_lst[1], 
+                                            self.current_detail_lst[2], self.current_detail_lst[3])
         
         # Get Folder Path (Also avoiding conflicts via changing button text)
-        if self.ui.pg1_next.text() != "Continue" or check_lst != current_lst:
+        if self.ui.pg1_next.text() != "Continue" or check_lst != self.current_detail_lst:
             self.folder_address = QFileDialog.getExistingDirectory(caption='Select Folder that contains C Files')
         
 
@@ -146,16 +156,16 @@ class GUI_Front:
         
         # Check if details are new or old---
         # Added -1 to skip the Bool part of list
-        dct_data = {'header_footer':self.headerfooterList, 'bef_ip':self.bef_ip_conf[:-1], 
+        self.dct_data = {'header_footer':self.headerfooterList, 'bef_ip':self.bef_ip_conf[:-1], 
                     'bef_op':self.bef_op_conf[:-1], 'gen_font':self.generic_Font}
-        sett_data = self.memory_set.data_dct
+        self.sett_data = self.memory_set.data_dct
 
-        if dct_data != sett_data:
+        if self.dct_data != self.sett_data:
             ans = messagebox.askyesno("Changes Detected in Memory", "Seems like you have changed something...\nDo you want to keep it, for future?")
             if ans:
                 
                 self.Page2_InputSetting()
-                self.memory_set.data_dct = dct_data
+                self.memory_set.data_dct = self.dct_data
                 print("Before put setting...",self.memory_set.data_dct)
                 self.memory_set.save_settingData(
                     headFoot = self.headerfooterList,
@@ -164,10 +174,61 @@ class GUI_Front:
                     genfont = self.generic_Font
                 )
     
-
-
+        # Establishing Connection with this one
+        self.connection_set = Ui_util_Handle(self.current_detail_lst, self.dct_data)
+        self.connection_set.C_filesList = self.folder_traverse()
+        self.connection_set.list_size = len(self.connection_set.C_filesList)
+        self.connection_set.address = self.folder_address
+        print(self.connection_set.C_filesList)
         # Go to next page---
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_3)
+
+
+    def Next_Ques_Butn(self):
+
+        # Edge cases
+        if self.ui.pg3_questionIP.toPlainText == "" or self.ui.pg3_testCasesIP.toPlainText() == "":
+            messagebox.showwarning("Entry Not filled!", "Kindly Fill Question or Input Entry")
+            return
+        elif self.ui.pg3_IpFrequency.text() == "":
+            messagebox.showwarning("Entry Not filled!", "Kindly Fill Frequency of test cases")
+            return
+
+        pg3F = self.ui.pg3_fontsizInp.text()
+        if pg3F == "":
+            pg3F = self.dct_data['gen_font'][1]
+
+        # details list: ['ques','ip', 'freq', 'font']
+        pg_3_details = [self.ui.pg3_questionIP.toPlainText(), self.ui.pg3_testCasesIP.toPlainText(),
+                        self.ui.pg3_IpFrequency.text(), pg3F]
+        
+        # bold list: ['pg1_bold', 'bef_ip_bold', 'bef_op_bold', 'pg3_bold'] -> bool List
+        bold_list = [self.ui.pg1_inforBoldCB.isChecked(), self.ui.pg2_BfBold.isChecked(),
+                     self.ui.pg2_BoBold.isChecked(), self.ui.pg3_boldIp.isChecked()]
+        
+
+        # SEND DATA TO WORD!!!!!
+        check = self.connection_set.next_data_transfer_util(
+            details_pg3 = pg_3_details,
+            bold_lst = bold_list
+        )
+        self.ui.pg3_questionIP.clear()
+        self.ui.pg3_testCasesIP.clear()
+        self.ui.pg3_IpFrequency.setText("")
+
+        if check:
+            self.ui.pg3_NextQusButton.setEnabled(False)
+            self.ui.pg3_createNext.setEnabled(True)
+
+
+    def Create_func_Butn(self):
+        self.connection_set.save_file_1()
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_4)
+        
+    def quit(self):
+        run(["rm", "input.txt", "output.txt"])
+        sys.exit()
+
 
         
         

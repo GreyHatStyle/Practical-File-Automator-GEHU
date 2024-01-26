@@ -1596,7 +1596,7 @@ QFrame{
         <string>Question</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit">
+      <widget class="QTextEdit" name="pg3_questionIP">
        <property name="geometry">
         <rect>
          <x>190</x>
@@ -1667,7 +1667,7 @@ QFrame{
         <string>Input</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_2">
+      <widget class="QTextEdit" name="pg3_testCasesIP">
        <property name="geometry">
         <rect>
          <x>20</x>

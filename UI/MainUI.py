@@ -773,19 +773,19 @@ class Ui_MainWindow(object):
         self.label_11.setFont(font)
         self.label_11.setStyleSheet("color: rgb(234, 234, 234);")
         self.label_11.setObjectName("label_11")
-        self.textEdit = QtWidgets.QTextEdit(parent=self.pg3_OverallFrame)
-        self.textEdit.setGeometry(QtCore.QRect(190, 16, 821, 81))
+        self.pg3_questionIP = QtWidgets.QTextEdit(parent=self.pg3_OverallFrame)
+        self.pg3_questionIP.setGeometry(QtCore.QRect(190, 16, 821, 81))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.textEdit.setFont(font)
-        self.textEdit.setStyleSheet("QTextEdit{\n"
+        self.pg3_questionIP.setFont(font)
+        self.pg3_questionIP.setStyleSheet("QTextEdit{\n"
 "\n"
 "    color: rgb(234, 234, 234);\n"
 "    background-color: rgb(52, 52, 52);\n"
 "    border: 2pxs solid rgb(11, 11, 11);\n"
 "    border-radius: 12px;\n"
 "}")
-        self.textEdit.setObjectName("textEdit")
+        self.pg3_questionIP.setObjectName("pg3_questionIP")
         self.pg3_InputFrame = QtWidgets.QFrame(parent=self.page_3)
         self.pg3_InputFrame.setGeometry(QtCore.QRect(30, 210, 501, 341))
         self.pg3_InputFrame.setStyleSheet("\n"
@@ -806,19 +806,19 @@ class Ui_MainWindow(object):
         self.label_17.setFont(font)
         self.label_17.setStyleSheet("color: rgb(234, 234, 234);")
         self.label_17.setObjectName("label_17")
-        self.textEdit_2 = QtWidgets.QTextEdit(parent=self.pg3_InputFrame)
-        self.textEdit_2.setGeometry(QtCore.QRect(20, 80, 461, 241))
+        self.pg3_testCasesIP = QtWidgets.QTextEdit(parent=self.pg3_InputFrame)
+        self.pg3_testCasesIP.setGeometry(QtCore.QRect(20, 80, 461, 241))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.textEdit_2.setFont(font)
-        self.textEdit_2.setStyleSheet("QTextEdit{\n"
+        self.pg3_testCasesIP.setFont(font)
+        self.pg3_testCasesIP.setStyleSheet("QTextEdit{\n"
 "\n"
 "    color: rgb(234, 234, 234);\n"
 "    background-color: rgb(52, 52, 52);\n"
 "    border: 2pxs solid rgb(11, 11, 11);\n"
 "    border-radius: 12px;\n"
 "}")
-        self.textEdit_2.setObjectName("textEdit_2")
+        self.pg3_testCasesIP.setObjectName("pg3_testCasesIP")
         self.pg3_InputSettingFrame = QtWidgets.QFrame(parent=self.page_3)
         self.pg3_InputSettingFrame.setGeometry(QtCore.QRect(570, 210, 501, 341))
         self.pg3_InputSettingFrame.setStyleSheet("\n"
