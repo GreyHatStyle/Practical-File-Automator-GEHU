@@ -49,6 +49,9 @@
      <number>0</number>
     </property>
     <widget class="QWidget" name="page_1">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <widget class="QFrame" name="pg1_InfoForm">
       <property name="geometry">
        <rect>
@@ -1440,6 +1443,9 @@ QFrame{
     </widget>
     <widget class="QWidget" name="page_3">
      <widget class="QPushButton" name="pg3_createNext">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>800</x>

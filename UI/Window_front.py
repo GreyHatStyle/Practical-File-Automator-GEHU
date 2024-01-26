@@ -29,6 +29,9 @@ class GUI_Front:
 
 
     def setter(self):
+        
+        #Test command
+        # self.ui.pg3_NextQusButton.clicked.connect(lambda: self.ui.pg3_createNext.setEnabled(True))
 
         # Save Command
         self.ui.pg1_SaveInfoButton.clicked.connect(lambda: self.memory_set.save_detailstxt(
@@ -142,6 +145,7 @@ class GUI_Front:
             return
         
         # Check if details are new or old---
+        # Added -1 to skip the Bool part of list
         dct_data = {'header_footer':self.headerfooterList, 'bef_ip':self.bef_ip_conf[:-1], 
                     'bef_op':self.bef_op_conf[:-1], 'gen_font':self.generic_Font}
         sett_data = self.memory_set.data_dct
