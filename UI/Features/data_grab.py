@@ -41,6 +41,8 @@ class Data_Put_Handle:
         if ans:
             with open(self.details_path, "w") as ip:
                 ip.write(f"{name}#{roll}#{sec}#{course}")
+            messagebox.showinfo("Saved!", f"""Your details:\nName: {name}\nRoll: {roll}\nSection: {sec}\nCourse: {course}\n
+has been saved successfully!""")
 
         self.data_details = self.check_details()
 

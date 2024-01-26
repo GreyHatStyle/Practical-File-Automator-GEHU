@@ -36,6 +36,7 @@ class GUI_Front:
         self.ui.pg2_next.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_3))
         self.ui.pg3_createNext.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_4))
         self.ui.pg4_quit.clicked.connect(lambda: sys.exit())
+        self.ui.pg1_about.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_4))
 
         # Back Commands
         self.ui.pg2_back.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_1))
@@ -95,8 +96,8 @@ class GUI_Front:
 
         self.ui.pg1_next.setText("Continue")
 
+        # Moves to Next Page
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_2)
-        print(self.folder_address)
 
 
 if __name__ == "__main__":
