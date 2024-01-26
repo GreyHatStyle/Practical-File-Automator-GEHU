@@ -1251,7 +1251,7 @@ QFrame{
         <string>Font</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="pg2_befcodeBox_3">
+      <widget class="QLineEdit" name="pg2_genFontsty">
        <property name="geometry">
         <rect>
          <x>150</x>
@@ -1298,7 +1298,7 @@ QFrame{
         <string>Font Size</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="pg2_befCodeFont_3">
+      <widget class="QLineEdit" name="pg2_genFontsize">
        <property name="geometry">
         <rect>
          <x>150</x>

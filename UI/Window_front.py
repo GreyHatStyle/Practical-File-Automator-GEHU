@@ -2,25 +2,7 @@ from .MainUI import *
 import sys
 from PyQt6.QtWidgets import QFileDialog
 from Utils import Format_Ctrl_Utils
-
-# def main_exe():
-#     app = QtWidgets.QApplication(sys.argv)
-#     MainWindow = QtWidgets.QMainWindow()
-#     ui = Ui_MainWindow()
-#     ui.setupUi(MainWindow)
-
-
-
-#     # to show UI
-#     ui.pg1_next.clicked.connect(lambda: ui.stackedWidget.setCurrentWidget(ui.page_2))
-
-#     MainWindow.show()
-#     sys.exit(app.exec())
-
-
-# if __name__ == "__main__":
-#     main_exe()
-
+from .Features import Data_Put_Handle
 
 class GUI_Front:
     def __init__(self) -> None:
@@ -44,7 +26,23 @@ class GUI_Front:
         # Back Commands
         self.ui.pg2_back.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_1))
         self.ui.pg3_back.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_2))
-        self.ui.pg4_back.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_3))
+        self.ui.pg4_back.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_1))
+
+        # Fill memory (Sending LineEdits class)
+        self.memory_set = Data_Put_Handle()
+        self.memory_set.put_details(
+            name = self.ui.pg1_NameInp,
+            roll = self.ui.pg1_RollNoInp,
+            sec = self.ui.pg1_SectionInp,
+            course = self.ui.pg1_CourseInp
+        )
+            #(Sending List of LineEdits)
+        self.memory_set.put_settingData(
+            headFoot = [self.ui.pg2_header_box, self.ui.pg2_footer_box],
+            befip = [self.ui.pg2_befcodeBox, self.ui.pg2_befCodeFont],
+            befop = [self.ui.pg2_befoutBox, self.ui.pg2_befoutFont],
+            genfont = [self.ui.pg2_genFontsty, self.ui.pg2_genFontsize]
+        )
 
         # Text Linker
         

@@ -603,19 +603,19 @@ class Ui_MainWindow(object):
         self.label_23.setFont(font)
         self.label_23.setStyleSheet("color: rgb(234, 234, 234);")
         self.label_23.setObjectName("label_23")
-        self.pg2_befcodeBox_3 = QtWidgets.QLineEdit(parent=self.pg2_OverallFrame)
-        self.pg2_befcodeBox_3.setGeometry(QtCore.QRect(150, 50, 281, 31))
+        self.pg2_genFontsty = QtWidgets.QLineEdit(parent=self.pg2_OverallFrame)
+        self.pg2_genFontsty.setGeometry(QtCore.QRect(150, 50, 281, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.pg2_befcodeBox_3.setFont(font)
-        self.pg2_befcodeBox_3.setStyleSheet("QLineEdit{\n"
+        self.pg2_genFontsty.setFont(font)
+        self.pg2_genFontsty.setStyleSheet("QLineEdit{\n"
 "\n"
 "    color: rgb(234, 234, 234);\n"
 "    background-color: rgb(52, 52, 52);\n"
 "    border: 2pxs solid rgb(11, 11, 11);\n"
 "    border-radius: 12px;\n"
 "}")
-        self.pg2_befcodeBox_3.setObjectName("pg2_befcodeBox_3")
+        self.pg2_genFontsty.setObjectName("pg2_genFontsty")
         self.label_25 = QtWidgets.QLabel(parent=self.pg2_OverallFrame)
         self.label_25.setGeometry(QtCore.QRect(10, 95, 111, 21))
         font = QtGui.QFont()
@@ -625,19 +625,19 @@ class Ui_MainWindow(object):
         self.label_25.setFont(font)
         self.label_25.setStyleSheet("color: rgb(234, 234, 234);")
         self.label_25.setObjectName("label_25")
-        self.pg2_befCodeFont_3 = QtWidgets.QLineEdit(parent=self.pg2_OverallFrame)
-        self.pg2_befCodeFont_3.setGeometry(QtCore.QRect(150, 90, 101, 31))
+        self.pg2_genFontsize = QtWidgets.QLineEdit(parent=self.pg2_OverallFrame)
+        self.pg2_genFontsize.setGeometry(QtCore.QRect(150, 90, 101, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.pg2_befCodeFont_3.setFont(font)
-        self.pg2_befCodeFont_3.setStyleSheet("QLineEdit{\n"
+        self.pg2_genFontsize.setFont(font)
+        self.pg2_genFontsize.setStyleSheet("QLineEdit{\n"
 "\n"
 "    color: rgb(234, 234, 234);\n"
 "    background-color: rgb(52, 52, 52);\n"
 "    border: 2pxs solid rgb(11, 11, 11);\n"
 "    border-radius: 12px;\n"
 "}")
-        self.pg2_befCodeFont_3.setObjectName("pg2_befCodeFont_3")
+        self.pg2_genFontsize.setObjectName("pg2_genFontsize")
         self.label_24 = QtWidgets.QLabel(parent=self.pg2_OverallFrame)
         self.label_24.setGeometry(QtCore.QRect(450, 40, 311, 51))
         font = QtGui.QFont()
