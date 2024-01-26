@@ -1,8 +1,9 @@
 from .MainUI import *
 import sys
-from PyQt6.QtWidgets import QFileDialog
+from PyQt6.QtWidgets import QFileDialog, QMessageBox
 from Utils import Format_Ctrl_Utils
 from .Features import Data_Put_Handle
+
 
 class GUI_Front:
     def __init__(self) -> None:
@@ -10,13 +11,22 @@ class GUI_Front:
         MainWindow = QtWidgets.QMainWindow()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(MainWindow)
+
         self.setter()
         MainWindow.show()
         app.exec()
-        
+
 
     def setter(self):
 
+        # Save Command
+        self.ui.pg1_SaveInfoButton.clicked.connect(lambda: self.memory_set.save_detailstxt(
+            name = self.ui.pg1_NameInp.text(),
+            roll = self.ui.pg1_RollNoInp.text(),
+            sec = self.ui.pg1_SectionInp.text(),
+            course = self.ui.pg1_CourseInp.text()
+        ))
+        
         # Next Commands
         self.ui.pg1_next.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_2))
         self.ui.pg2_next.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_3))
