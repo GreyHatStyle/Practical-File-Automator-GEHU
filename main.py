@@ -3,6 +3,7 @@ from subprocess import run
 
 if __name__ == "__main__":
     GUI_Front()
+    run(["rm","input.txt","output.txt"])
     
 
     
