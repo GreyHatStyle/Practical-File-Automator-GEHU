@@ -1,7 +1,7 @@
 
 # Practical File Generator
 
-This project is designed to minimize the process of making practical files by college students.
+This project is designed to minimize the process of making practical files by college students. It follows *Graphic Era Hill University's* Format of making Practical files.
 \
 \
 Solving practical programming questions of C, C++ and Java are sure fun and challenging, but copying them in word file with question and name correctly formated, and maintaining the previous page format while working in present page is time consuming.
