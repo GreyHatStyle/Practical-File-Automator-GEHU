@@ -1,6 +1,6 @@
 from .MainUI import *
 import sys
-from PyQt6.QtWidgets import QFileDialog
+from PyQt6.QtWidgets import QFileDialog, QProgressBar
 from Utils import Format_Ctrl_Utils, Ui_util_Handle
 from .Features import Data_Put_Handle
 from tkinter import messagebox
@@ -27,11 +27,8 @@ class GUI_Front:
         self.dct_data = {}
         self.sett_data = {}
         self.current_detail_lst = []
-
-        # Util calls
         
         
-
         self.setter()
         MainWindow.show()
         app.exec()
@@ -112,6 +109,10 @@ class GUI_Front:
 
         if self.folder_address == "":
             messagebox.showerror(title="Error!", message="No folder selected!")
+            return
+
+        if len(self.folder_traverse()) == 0:
+            messagebox.showerror("No C files", "No C files found in Selected folder")
             return
 
         self.ui.pg1_next.setText("Continue")
