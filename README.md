@@ -64,7 +64,8 @@ Soon, I will be uploading an exe installation of this project, in this repositor
 
 
 
-
+## Feedback
+If you have any feedback, please reach me it manasbisht1142004@gmail.com
 
 
 
@@ -72,3 +73,5 @@ Soon, I will be uploading an exe installation of this project, in this repositor
 
 - [@GreyHatStyle(Manas Bisht)](https://github.com/GreyHatStyle)
 
+## License
+[MIT License](LICENSE)
