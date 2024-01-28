@@ -180,6 +180,10 @@ class GUI_Front:
         self.connection_set.list_size = len(self.connection_set.C_filesList)
         self.connection_set.address = self.folder_address
         print(self.connection_set.C_filesList)
+        
+        #Set label
+        curr_file = self.connection_set.C_filesList[0].split("\\")[-1]
+        self.ui.pg3_quesLabel.setText(f'Current File: ({curr_file})')
         # Go to next page---
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_3)
 
@@ -206,11 +210,13 @@ class GUI_Front:
         bold_list = [self.ui.pg1_inforBoldCB.isChecked(), self.ui.pg2_BfBold.isChecked(),
                      self.ui.pg2_BoBold.isChecked(), self.ui.pg3_boldIp.isChecked()]
         
+        
 
         # SEND DATA TO WORD!!!!!
         check = self.connection_set.next_data_transfer_util(
             details_pg3 = pg_3_details,
-            bold_lst = bold_list
+            bold_lst = bold_list,
+            label = self.ui.pg3_quesLabel
         )
         self.ui.pg3_questionIP.clear()
         self.ui.pg3_testCasesIP.clear()

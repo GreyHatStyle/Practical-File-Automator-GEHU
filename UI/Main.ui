@@ -1649,7 +1649,7 @@ QFrame{
         <rect>
          <x>20</x>
          <y>10</y>
-         <width>151</width>
+         <width>111</width>
          <height>61</height>
         </rect>
        </property>
@@ -1689,6 +1689,29 @@ QFrame{
 	border: 2pxs solid rgb(11, 11, 11);
 	border-radius: 12px;
 }</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="pg3_quesLabel">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>10</y>
+         <width>371</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(234, 234, 234);</string>
+       </property>
+       <property name="text">
+        <string/>
        </property>
       </widget>
      </widget>

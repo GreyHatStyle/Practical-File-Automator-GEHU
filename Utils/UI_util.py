@@ -1,6 +1,6 @@
 from tkinter import messagebox
 from Format_Control import Main_Format_Handle
-from PyQt6.QtWidgets import QFileDialog,QWidget
+from PyQt6.QtWidgets import QFileDialog,QWidget,QLabel
 from os import getcwd
 
 from docx import Document
@@ -23,10 +23,18 @@ class Ui_util_Handle:
         
 
 
-    def next_data_transfer_util(self, details_pg3: list, bold_lst :list):
+    def next_data_transfer_util(self, details_pg3: list, bold_lst :list, label: QLabel):
         # details list: ['ques','ip', 'freq', 'font']
 
         file = self.C_filesList[self.index]
+
+
+        # To display Label
+        if (self.index + 1 != self.list_size):
+            lst = self.C_filesList[self.index+1].split("\\")
+            label.setText(lst[-1])
+
+        
         print(f"self.index: {self.index}, self.listsize: {self.list_size} CURRENT INDEX")
 
         self.startDoc.NextQues_PushB_Func(
