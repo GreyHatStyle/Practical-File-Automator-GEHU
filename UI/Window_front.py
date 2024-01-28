@@ -1,6 +1,7 @@
 from .MainUI import *
 import sys
-from PyQt6.QtWidgets import QFileDialog, QProgressBar
+from PyQt6.QtWidgets import QFileDialog,QProgressBar
+
 from Utils import Format_Ctrl_Utils, Ui_util_Handle
 from .Features import Data_Put_Handle
 from tkinter import messagebox
@@ -212,17 +213,26 @@ class GUI_Front:
                      self.ui.pg2_BoBold.isChecked(), self.ui.pg3_boldIp.isChecked()]
         
         
+        # Progress Bar
+        self.ui.pg3_progressBar.setValue(10)
 
         # SEND DATA TO WORD!!!!!
         check = self.connection_set.next_data_transfer_util(
             details_pg3 = pg_3_details,
             bold_lst = bold_list,
-            label = self.ui.pg3_quesLabel
+            label = self.ui.pg3_quesLabel,
+            pg_bar = self.ui.pg3_progressBar
         )
+        self.ui.pg3_progressBar.setValue(100)
         self.ui.pg3_questionIP.clear()
         self.ui.pg3_testCasesIP.clear()
         self.ui.pg3_IpFrequency.setText("")
 
+        from time import sleep
+        sleep(0.4)
+        self.ui.pg3_progressBar.setValue(0)
+
+    
         if check:
             self.ui.pg3_NextQusButton.setEnabled(False)
             self.ui.pg3_createNext.setEnabled(True)

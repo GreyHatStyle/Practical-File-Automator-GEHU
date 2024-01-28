@@ -1,7 +1,7 @@
 from tkinter import messagebox
 from Format_Control import Main_Format_Handle
-from PyQt6.QtWidgets import QFileDialog,QWidget,QLabel
-from os import getcwd
+from PyQt6.QtWidgets import QFileDialog,QWidget,QLabel,QProgressBar
+from time import sleep
 
 from docx import Document
 class Ui_util_Handle:
@@ -23,7 +23,7 @@ class Ui_util_Handle:
         
 
 
-    def next_data_transfer_util(self, details_pg3: list, bold_lst :list, label: QLabel):
+    def next_data_transfer_util(self, details_pg3: list, bold_lst :list, label: QLabel, pg_bar: QProgressBar):
         # details list: ['ques','ip', 'freq', 'font']
 
         file = self.C_filesList[self.index]
@@ -36,6 +36,7 @@ class Ui_util_Handle:
 
         
         print(f"self.index: {self.index}, self.listsize: {self.list_size} CURRENT INDEX")
+        pg_bar.setValue(80)
 
         self.startDoc.NextQues_PushB_Func(
             detail_list=self.detail_listTxt, 
@@ -45,16 +46,20 @@ class Ui_util_Handle:
             bef_op_fsize=self.sys_dct['bef_op'][1], bef_op_bold=bold_lst[2],
             count=int(details_pg3[2]), 
             ipString=details_pg3[1], 
-            opc_fSize=details_pg3[-1], opc_bold=bold_lst[3], question_=details_pg3[0]
-            
+            opc_fSize=details_pg3[-1], opc_bold=bold_lst[3], question_=details_pg3[0],
+            pg_bar2=pg_bar
         )
 
         self.index += 1
-         
+
+        
+        sleep(0.1)
+        pg_bar.setValue(90)
         if self.index == self.list_size:
             print(f"self.index: {self.index}, self.listsize: {self.list_size} STOPPEd!")
             messagebox.showinfo("Completed!", "All files in folders are completed!\nClick on 'Create' button")
             return True
+        
         return False
     
     def save_file_1(self):
