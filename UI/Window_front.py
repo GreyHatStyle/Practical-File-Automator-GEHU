@@ -15,7 +15,7 @@ class GUI_Front:
         MainWindow = QtWidgets.QMainWindow()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(MainWindow)
-
+        MainWindow.setWindowTitle("Practical File Formater")
 
         # Storing Variables
         self.folder_address = ""
