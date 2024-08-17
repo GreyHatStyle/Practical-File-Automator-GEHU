@@ -1,0 +1,7 @@
+
+
+TEST CASE (1):
+Enter a: 1
+Enter b: 2
+Enter c: 3
+Sum is: 6
