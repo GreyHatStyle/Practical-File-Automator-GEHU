@@ -117,7 +117,7 @@ class GUI_Front:
         - .java
         """
         util = Format_Ctrl_Utils()
-        return (util.get_c_files) or (util.get_cpp_files)
+        return len(util.get_c_files((self.folder_address))) or len(util.get_cpp_files((self.folder_address)))
     
 
     # Moving to Setting page
@@ -143,7 +143,7 @@ class GUI_Front:
             return
 
         if self.check_folder() == False:
-            messagebox.showerror(f"No {self.mode} files", "No C files found in Selected folder")
+            messagebox.showerror(f"No {self.mode} files", "No C or CPP files found in Selected folder")
             return
 
         self.ui.pg1_next.setText("Continue")
@@ -164,7 +164,7 @@ class GUI_Front:
 
         # Setting mode---
         if self.ui.pg2_javaRb.isChecked():
-            messagebox.showinfo("Please select differenty option", "For now only 'C' Mode is working...")
+            messagebox.showinfo("Please select differenty option", "For now only 'C' and 'CPP' Mode is working...")
             return
         elif self.ui.pg2_cppRb.isChecked():
             self.mode = "cpp"
