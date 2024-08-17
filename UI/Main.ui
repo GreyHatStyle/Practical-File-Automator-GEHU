@@ -1596,7 +1596,7 @@ QFrame{
         <string>Question</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="pg3_questionIP">
+      <widget class="QPlainTextEdit" name="pg3_questionIP">
        <property name="geometry">
         <rect>
          <x>190</x>
@@ -1611,7 +1611,7 @@ QFrame{
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QTextEdit{
+        <string notr="true">QPlainTextEdit{
 
 	color: rgb(234, 234, 234);
 	background-color: rgb(52, 52, 52);

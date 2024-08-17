@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '.\Main.ui'
+# Form implementation generated from reading ui file 'Main.ui'
 #
 # Created by: PyQt6 UI code generator 6.6.1
 #
@@ -773,12 +773,12 @@ class Ui_MainWindow(object):
         self.label_11.setFont(font)
         self.label_11.setStyleSheet("color: rgb(234, 234, 234);")
         self.label_11.setObjectName("label_11")
-        self.pg3_questionIP = QtWidgets.QTextEdit(parent=self.pg3_OverallFrame)
+        self.pg3_questionIP = QtWidgets.QPlainTextEdit(parent=self.pg3_OverallFrame)
         self.pg3_questionIP.setGeometry(QtCore.QRect(190, 16, 821, 81))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.pg3_questionIP.setFont(font)
-        self.pg3_questionIP.setStyleSheet("QTextEdit{\n"
+        self.pg3_questionIP.setStyleSheet("QPlainTextEdit{\n"
 "\n"
 "    color: rgb(234, 234, 234);\n"
 "    background-color: rgb(52, 52, 52);\n"
