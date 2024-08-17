@@ -31,3 +31,18 @@ BRANCH - CSE
             print("")
         # print("List is : ", c_files)
         return c_files
+    
+    
+    def get_cpp_files(self, folder_address: str):
+        dir_list = listdir(folder_address)
+        print(dir_list)
+        cpp_files = []
+        for i in dir_list:
+            if i[-4::] == ".cpp":
+                cpp_files.append(f"{folder_address}\\{i}")
+        try:
+            cpp_files.remove('tempCodeRunnerFile.cpp')
+        except:
+            print("")
+        # print("List is : ", cpp_files)
+        return cpp_files

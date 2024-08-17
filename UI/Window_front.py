@@ -36,6 +36,11 @@ class GUI_Front:
 
 
     def setter(self):
+        """Setups all buttons with their commands\n
+        - Page changing buttons: Back, Next, etc
+        - Command buttons: Buttons which perform certain task
+        \n
+        Over all, it has command of Each and every button in GUI"""
         
         #Test command
         # self.ui.pg3_NextQusButton.clicked.connect(lambda: self.ui.pg3_createNext.setEnabled(True))
@@ -84,10 +89,35 @@ class GUI_Front:
         
 
     # Traversing Folder
-    def folder_traverse(self) -> list:
+    def folder_traverse(self, extension_file) -> list:
+        """
+        Traverse selected folder and find Extension files only:\n
+        - c
+        - cpp
+        - java
+        """
         util = Format_Ctrl_Utils()
-        c_files = util.get_c_files(self.folder_address)
-        return c_files
+        print(self.mode)
+        print(self.folder_address)
+        files_list = ""
+        if extension_file == "c":
+            files_list = util.get_c_files(self.folder_address)
+        
+        elif extension_file == "cpp":
+            files_list = util.get_cpp_files(self.folder_address)
+
+        print(files_list)
+        return files_list
+    
+    def check_folder(self):
+        """
+        Returns True, if selected folder has extension files:
+        - .c
+        - .cpp
+        - .java
+        """
+        util = Format_Ctrl_Utils()
+        return (util.get_c_files) or (util.get_cpp_files)
     
 
     # Moving to Setting page
@@ -112,8 +142,8 @@ class GUI_Front:
             messagebox.showerror(title="Error!", message="No folder selected!")
             return
 
-        if len(self.folder_traverse()) == 0:
-            messagebox.showerror("No C files", "No C files found in Selected folder")
+        if self.check_folder() == False:
+            messagebox.showerror(f"No {self.mode} files", "No C files found in Selected folder")
             return
 
         self.ui.pg1_next.setText("Continue")
@@ -137,12 +167,14 @@ class GUI_Front:
             messagebox.showinfo("Please select differenty option", "For now only 'C' Mode is working...")
             return
         elif self.ui.pg2_cppRb.isChecked():
-            messagebox.showinfo("Please select differenty option", "For now only 'C' Mode is working...")
-            return
+            self.mode = "cpp"
+
         elif self.ui.pg2_cRb.isChecked():
             self.mode = "c"
 
         # Edge Cases---
+        # debug
+        print("Reached edge cases")
         if self.ui.pg2_befcodeBox.text() == "" or self.ui.pg2_befoutBox.text() == "":
             messagebox.showwarning("Please Select and fill all '*' feilds!", "Before Output or Before Code Field not filled.")
             return
@@ -178,13 +210,20 @@ class GUI_Front:
     
         # Establishing Connection with this one
         self.connection_set = Ui_util_Handle(self.current_detail_lst, self.dct_data)
-        self.connection_set.C_filesList = self.folder_traverse()
-        self.connection_set.list_size = len(self.connection_set.C_filesList)
+
+        # Updating Ui_util_Handle attributes directly in class, from here
+        files_list = self.folder_traverse(self.mode)
+        if(len(files_list) == 0):
+            messagebox.showerror("Error!", f"No {self.mode} files detected in this folder\nkindly select mode, of which files are present in selected folder.")
+            return
+
+        self.connection_set.FilesList = files_list
+        self.connection_set.list_size = len(self.connection_set.FilesList)
         self.connection_set.address = self.folder_address
-        print(self.connection_set.C_filesList)
+        print(self.connection_set.FilesList)
         
         #Set label
-        curr_file = self.connection_set.C_filesList[0].split("\\")[-1]
+        curr_file = self.connection_set.FilesList[0].split("\\")[-1]
         self.ui.pg3_quesLabel.setText(f'Current File: ({curr_file})')
         # Go to next page---
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_3)
@@ -221,7 +260,8 @@ class GUI_Front:
             details_pg3 = pg_3_details,
             bold_lst = bold_list,
             label = self.ui.pg3_quesLabel,
-            pg_bar = self.ui.pg3_progressBar
+            pg_bar = self.ui.pg3_progressBar,
+            mode = self.mode
         )
         self.ui.pg3_progressBar.setValue(100)
         self.ui.pg3_questionIP.clear()

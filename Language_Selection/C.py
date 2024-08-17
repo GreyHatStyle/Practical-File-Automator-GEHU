@@ -1,6 +1,6 @@
 import subprocess
 
-class C_Complier:
+class C_Compiler:
 
     def __init__(self, address :str, frequency_input :int, input_str :str):
         self.address_str = address
@@ -23,6 +23,7 @@ class C_Complier:
         Takes bracket content of scanf and in next line use it to print using printf\n
         example:\n
         scanf("%d %d", &n, &m); printf("%d %d", n, m);printf("New line char");
+        - returns: *("%d %d", n, m)*
         """
         strr = ""
         flag = False
@@ -82,12 +83,20 @@ class C_Complier:
                 fp.write(f"\n{buff[i]}")
             
                 if "int main(" in buff[i] or "signed main(" in buff[i]:
+
+                    # Dealing with '{' below int main
+                    if '{' in buff[i+1]:
+                        fp.write("{")
+
                     fp.write("\n")
                     fp.write(f"int t = {No_of_times_output};\n")
                     fp.write("while(t--){\n")
                     fp.write(r'printf("\n\n");')
                     fp.write(f'printf("TEST CASE (%d):", {No_of_times_output}-t);')
                     fp.write(r'printf("\n");')
+
+                    if '{' in buff[i+1]:
+                        buff[i+1] = ""
 
                 if "scanf(" in buff[i]:
                     s = self.__bracket_content(buff[i])

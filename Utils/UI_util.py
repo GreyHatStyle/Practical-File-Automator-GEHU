@@ -8,7 +8,7 @@ class Ui_util_Handle:
     def __init__(self, detail_txt: list, system_dct: dict):
 
         self.index = 0
-        self.C_filesList = []
+        self.FilesList = []
         self.address = ""
         self.list_size = 0
         self.detail_listTxt = detail_txt
@@ -23,15 +23,24 @@ class Ui_util_Handle:
         
 
 
-    def next_data_transfer_util(self, details_pg3: list, bold_lst :list, label: QLabel, pg_bar: QProgressBar):
+    def next_data_transfer_util(self, details_pg3: list, bold_lst :list, label: QLabel, pg_bar: QProgressBar, mode: str):
+        """
+        Essential role:
+        - Takes files list, and **display it on label** on by one.
+        - After taking input of first file, it will display next file.
+        - Sends data to "Main_Format_Handle" class, for further execution
+        - Increase *progress bar* value.
+        - Display "Completed" message, after all files are done is list.
+
+        """
         # details list: ['ques','ip', 'freq', 'font']
 
-        file = self.C_filesList[self.index]
+        file = self.FilesList[self.index]
 
 
         # To display Label
         if (self.index + 1 != self.list_size):
-            lst = self.C_filesList[self.index+1].split("\\")
+            lst = self.FilesList[self.index+1].split("\\")
             label.setText(lst[-1])
 
         
@@ -47,7 +56,8 @@ class Ui_util_Handle:
             count=int(details_pg3[2]), 
             ipString=details_pg3[1], 
             opc_fSize=details_pg3[-1], opc_bold=bold_lst[3], question_=details_pg3[0],
-            pg_bar2=pg_bar
+            pg_bar2=pg_bar,
+            mode = mode
         )
 
         self.index += 1

@@ -2,7 +2,7 @@ from docx import Document
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.shared import Pt
 from Utils import Format_Ctrl_Utils
-from Language_Selection import C_Complier
+from Language_Selection import C_Compiler, CPP_Compiler
 
 class WordDocument_Handle:
     def __init__(self, doc: Document, befIpOpList: list, genericFont: list):
@@ -82,10 +82,15 @@ class WordDocument_Handle:
         self.document.add_page_break()
 
 
-    def set_outputCases(self, Address, frequency, inputStr, fontsize, isbold: bool) ->str:
+    def set_outputCases(self, Address, frequency, inputStr, fontsize, isbold: bool, mode) ->str:
         # Sets output
         count = int(frequency)
-        op = C_Complier(address=Address, frequency_input=count, input_str=inputStr)
+        if mode == "c":
+            op = C_Complier(address=Address, frequency_input=count, input_str=inputStr)
+
+        elif mode == "cpp":
+            op = CPP_Compiler(address=Address, frequency_input=count, input_str=inputStr)
+
         output = op.get_output()
         para = self.document.add_paragraph("")
         setter = para.add_run(output).font

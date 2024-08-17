@@ -15,7 +15,8 @@ class Main_Format_Handle:
 
     
     def NextQues_PushB_Func(self, detail_list, detail_fsty, detail_fsize, detail_boldd, bef_ip_fsize, bef_ip_bold, file_address, 
-                            bef_op_fsize, bef_op_bold, count, ipString, opc_fSize, opc_bold, question_,pg_bar2:QProgressBar):
+                            bef_op_fsize, bef_op_bold, count, ipString, opc_fSize, opc_bold, question_,pg_bar2:QProgressBar,
+                            mode):
         
         # Set Question
         self.start.set_question(question=question_)
@@ -28,7 +29,7 @@ class Main_Format_Handle:
         # Output Heading
         self.start.set_befOutput(fontsize=bef_op_fsize, isbold=bef_op_bold)
         # Output Insertion
-        self.start.set_outputCases(Address=file_address, frequency=count, inputStr=ipString, fontsize=opc_fSize, isbold=opc_bold)
+        self.start.set_outputCases(Address=file_address, frequency=count, inputStr=ipString, fontsize=opc_fSize, isbold=opc_bold, mode=mode)
         pg_bar2.setValue(80)
 
     
