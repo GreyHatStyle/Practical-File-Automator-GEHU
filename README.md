@@ -33,13 +33,13 @@ Solving practical programming questions of C, C++ and Java are sure fun and chal
 Clone the project
 
 ```bash
-  git clone https://github.com/GreyHatStyle/Project-File-Generator.git
+  git clone https://github.com/GreyHatStyle/Practical-File-Generator-GEHU.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd Project-File-Generator
+  cd Practical-File-Generator-GEHU
 ```
 
 Install dependencies
