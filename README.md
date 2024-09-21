@@ -1,5 +1,5 @@
 
-# Practical File Generator
+# Practical File Automator
 
 This project is designed to minimize the process of making practical files by college students. It follows *Graphic Era Hill University's* Format of making Practical files.
 \
