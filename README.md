@@ -124,7 +124,7 @@ These documentations helped me alot during project planning.
 
 ## Application Installation
 To run this project, **without Python** in your system: 
-1. Download the ZIP file [`Practical File Formatter.zip`](Practical-File-Formatter.zip)
+1. Download the ZIP file [`Practical File Formatter.zip`](Practical%20File%20Formatter.zip)
 2. Extract the ZIP safely.
 3. Run (Double Click on) `Practical File Formatter.exe` directly.
 
