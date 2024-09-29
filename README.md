@@ -128,7 +128,7 @@ To run this project, **without Python** in your system:
 2. Extract the ZIP safely.
 3. Run (Double Click on) `Practical File Formatter.exe` directly.
 
-If any error occurs during Runtime, kindly contact me Via gmail given below, Also a webversion of this project will be comming soon...
+If any error occurs during Runtime, kindly contact me via gmail given below, Also a Website Version of this project will be coming soon...
 
 
 ## Feedback
