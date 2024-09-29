@@ -10,6 +10,17 @@ Solving practical programming questions of C, C++ and Java are sure fun and chal
 **This project solves this issue**
 
 
+# Table of Contents
+1. [Features](#features)
+2. [Tech Stack](#tech-stack)
+3. [Run Locally](#run-locally)
+4. [How To Use?](#how-to-use)
+5. [Results (Screenshots)](#results)
+6. [Credits (Documentation)](#credits-documentation)
+7. [Application Installation By Zip](#application-installation)
+8. [Feedback](#feedback)
+9. [Author](#author)
+10. [License](#license)
 
 
 ## Features
@@ -28,7 +39,7 @@ Solving practical programming questions of C, C++ and Java are sure fun and chal
 
 
 
-## Run Locally (Installation Guide)
+## Run Locally
 
 Clone the project
 
@@ -93,7 +104,7 @@ Enter your details (Will be added in Practical File only (Word docx).
 
 * Save the file.
 
-## Result (Screenshots)
+## Results
 To view full Word Document you can open  `Your Name DMP.docx` file, present above.
 \
 \
@@ -106,14 +117,18 @@ To view full Word Document you can open  `Your Name DMP.docx` file, present abov
 
 
 
-## Credits (Documentation)
+## Credits Documentation
 These documentations helped me alot during project planning.
 - [python-docx](https://python-docx.readthedocs.io/en/latest/)
 - [qt-designer](https://www.pythontutorial.net/pyqt/qt-designer/)
 
 ## Application Installation
-Soon, I will be uploading an exe installation of this project, in this repository, to allow beginners to use it.
+To run this project, **without Python** in your system: 
+1. Download the ZIP file [`Practical File Formatter.zip`](Practical-File-Formatter.zip)
+2. Extract the ZIP safely.
+3. Run (Double Click on) `Practical File Formatter.exe` directly.
 
+If any error occurs during Runtime, kindly contact me Via gmail given below, Also a webversion of this project will be comming soon...
 
 
 ## Feedback
