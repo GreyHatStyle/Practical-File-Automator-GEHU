@@ -29,7 +29,7 @@ class Main_Format_Handle:
         # Output Heading
         self.start.set_befOutput(fontsize=bef_op_fsize, isbold=bef_op_bold)
         # Output Insertion
-        self.start.set_outputCases(Address=file_address, frequency=count, inputStr=ipString, fontsize=opc_fSize, isbold=opc_bold, mode=mode)
+        self.start.set_outputCases_text(Address=file_address, frequency=count, inputStr=ipString, fontsize=opc_fSize, isbold=opc_bold, mode=mode)
         pg_bar2.setValue(80)
 
     

@@ -3,6 +3,8 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.shared import Pt
 from Utils import Format_Ctrl_Utils
 from Language_Selection import C_Compiler, CPP_Compiler
+from docx.shared import Inches
+from .CmdSS import ScreenShotOutput
 
 class WordDocument_Handle:
     def __init__(self, doc: Document, befIpOpList: list, genericFont: list):
@@ -15,7 +17,9 @@ class WordDocument_Handle:
 
 
     def set_headFoot(self, hfList: list):
-        # Adding Header and Footer
+        """
+        ## Adding Header and Footer
+        """
 
         section = self.document.sections[0]
         header = section.header
@@ -30,7 +34,9 @@ class WordDocument_Handle:
 
 
     def set_question(self, question: str):
-        # Sets Question First
+        """
+        ## Sets Question First
+        """
         para = self.document.add_paragraph("")
         setter = para.add_run(question).font
         setter.name = self.GenericFont[0]
@@ -39,6 +45,9 @@ class WordDocument_Handle:
 
     
     def set_details(self, DetailsList: list, fontstyle: str, fontsize: int, isbold: bool):
+        """
+        ## Set Details and fonts
+        """
         para = self.document.add_paragraph("")
         detail_str = self.Utils.person_details_formatter(detailsList=DetailsList)
 
@@ -50,7 +59,10 @@ class WordDocument_Handle:
 
     
     def set_befCode(self, fontsize, isbold: bool):
+        """
         # Sets Before Code Title
+        
+        """
         para = self.document.add_paragraph("")
         setter = para.add_run(f"//{self.befIpOp[0]}:").font
         setter.name = self.GenericFont[0]
@@ -58,7 +70,10 @@ class WordDocument_Handle:
         setter.bold = isbold
 
     def set_befOutput(self, fontsize, isbold: bool):
+        """
+        
         # Sets Before Ouput Title
+        """
         para = self.document.add_paragraph("")
         setter = para.add_run(f"{self.befIpOp[1]}:").font
         setter.name = self.GenericFont[0]
@@ -82,11 +97,14 @@ class WordDocument_Handle:
         self.document.add_page_break()
 
 
-    def set_outputCases(self, Address, frequency, inputStr, fontsize, isbold: bool, mode) ->str:
-        # Sets output
+    def set_outputCases_text(self, Address, frequency, inputStr, fontsize, isbold: bool, mode) ->str:
+        """
+        # Sets output (Text output)
+        
+        """
         count = int(frequency)
         if mode == "c":
-            op = C_Complier(address=Address, frequency_input=count, input_str=inputStr)
+            op = C_Compiler(address=Address, frequency_input=count, input_str=inputStr)
 
         elif mode == "cpp":
             op = CPP_Compiler(address=Address, frequency_input=count, input_str=inputStr)
@@ -98,7 +116,42 @@ class WordDocument_Handle:
         setter.size = Pt(int(fontsize))
         setter.bold = isbold
         self.document.add_page_break()
+
+    def get_details(self):
+        """
+        ## Get user details, names etc
+        returns list [name, roll, section, course]
+        """
+        path = "UI\\Features\\Data\\details.txt"
+        lst = []
+        with open(path, "r") as fp:
+            lst = fp.read().split("#")
         
+        return lst
+
+    def set_outputCases_screenShot(self, Address, frequency, inputStr, fontsize, isbold: bool, mode):
+        """
+        Sets output (Screen shot - Picture)
+        """
+        count = int(frequency)
+        if mode == "c":
+            op = C_Compiler(address=Address, frequency_input=count, input_str=inputStr)
+
+        elif mode == "cpp":
+            op = CPP_Compiler(address=Address, frequency_input=count, input_str=inputStr)
+
+        output = op.get_output()
+
+        detail_lst = self.get_details()
+        user_name = detail_lst[0]
+
+        ## TODO: Get file name here
+        ScreenShotOutput().create_command_image()
+
+        self.document.add_picture('Format_Control\\command_image_final.png', width=Inches(1.25))
+        self.document.add_page_break()
+        
+
     
     def save_file(self, fileaddress):
         # To save file
